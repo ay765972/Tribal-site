@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags For SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Knowledge Portal</title>
+
+    <!-- Linking Stylesheets, CDNS, Fonts, Favicons -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" href="assets/images/favicon/favicon.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/CourseInfo.css" />
+
+    <noscript>Your browser does not support JavaScript!</noscript>
+</head>
+
+<body>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
+
+    <div id="preloader"></div>
+
+    <!-- Navbar -->
+
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-md navbar-inverse navbar-custom2 fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="hideme">
+                        <div class="d-flex justify-content-start mt-0 mb-5">
+                            <ul class="navbar-nav">
+                                <li class="nav-item nav1-t1">
+                                    <p class="mx-3">
+                                        <a href="https://www.india.gov.in" target="_blank"
+                                            class="custom-link">GOVERNMENT OF INDIA
+                                        </a>
+                                    </p>
+                                </li>
+                                <li class="nav-item nav1-t2">
+                                    <p class="mx-3">
+                                        <a href="https://tribal.nic.in" target="_blank" class="custom-link">MINISTRY OF
+                                            TRIBAL AFFAIRS
+                                        </a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-0 mb-5">
+                    <ul class="navbar-nav">
+                        <li class="nav-item nav1-t3">
+                            <p class="mx-3">
+                                <a href="check-status.html" class="custom-link4 nav1-t4">Check Status
+                                </a>
+                            </p>
+                        </li>
+                        <li class="nav-item nav1-t3">
+                            <p class="mx-3">
+                                <a href="#" id="login" class="custom-link2 nav1-t3">Login
+                                </a>
+                                <a href="#" id="logout" class="custom-link2 nav1-t3">Logout
+                                </a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-md navbar-inverse navbar-custom3 fixed-top"
+            style="position: absolute;margin-top: 35px;">
+            <div class="mr-auto">
+                <img src="assets/media/Goal.jpg" alt="" width="190.22375430899405px" height="80px" />
+            </div>
+            <div class="ml-auto hideme">
+                <img src="assets/media/Facebook.gif" alt="" width="205px" height="85px"
+                    class="navbar-nav mx-3 d-inline hideme" />
+                <a href="https://tribal.nic.in" target="_blank">
+                    <img src="assets/media/Ministry.jpg" alt="" width="226.13400440390058px" height="80px"
+                        class="navbar-nav d-inline hideme" />
+                </a>
+            </div>
+            <div class="dropdown-divider"></div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg navbar-inverse navbar-custom fixed-top" style="margin-top: 130px;">
+            <button class="navbar-toggler custom-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="dropdown-divider"></div>
+                <ul class="navbar-nav mr-sm-auto text-center mx-lg-auto">
+                    <li class="nav-item active mx-3">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown mx-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="aboutministry.html">Ministry</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="aboutfacebook.html">Facebook</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="aboutgoal.html">The Program</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Apply As Mentee
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="faqs-mentee.html">FAQs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="mentee-form.html">Registration Form</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Apply As Mentor
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="faqs-mentor.html">FAQs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="mentor-form.html">Registration Form</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="knowPortal.html">Knowledge
+                            Portal</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                </ul>
+                <div class="down-divider"></div>
+            </div>
+        </nav>
+
+    </header>
+
+    <body>
+
+        <div style="margin-top: 250px;">
+            <div class="row pt-0 pb-5" style="background-color: #F3F3F3">
+                <div class="col-12 text-left">
+                    <h1 class="heading-sect mt-5 text-center"><b><span class="colored">GOAL</span> <span
+                                style="color: black">Curriculum</span></b></h1>
+                    <div class="chart" id="graph" data-percent="88"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 40px;">
+            <div class="card">
+                <div class="card-header" id="headingHead1">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn colored2" data-toggle="collapse" data-target="#collapseHead1">
+                            <span class="colored2"><span class="text-bold">Course <span
+                                        class="colored">1</span></span>&nbsp; Public Speaking and
+                                Confidence</span></button>
+                    </h2>
+                </div>
+                <!-- <div id="collapseHead1" class="collapse" aria-labelledby="headingHead1" data-parent="#accordionExample">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="bs-example">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header border-top-0" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link colored2"
+                                                    data-toggle="collapse" data-target="#collapseOne">
+                                                    <span class="colored2"><span class="text-bold">Week 1:</span>
+                                                        Introduction to Public Speaking and Confidence</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <a href="course-disp.html">
+                                                    <p>Session 1: Understanding the meaning and importance of confidence
+                                                        and
+                                                        self-esteem</p>
+                                                </a>
+                                                <a href="course-disp.html">
+                                                    <p>Session 2: Understanding the art of public speaking and its
+                                                        importance</p>
+                                                </a>
+                                                <a href="course-disp.html">
+                                                    <p>Session 3: Understanding the correlation between public speaking
+                                                        and
+                                                        confidence levels; learning about confidence and psychology</p>
+                                                </a>
+                                                <a href="course-disp.html">
+                                                    <p>Session 4: Case studies of orators and understanding key elements
+                                                        of
+                                                        good delivery</p>
+                                                </a>
+                                                <a href="course-disp.html">
+                                                    <p>Written Test</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwo">
+                                                    <span class="colored2"><span class="text-bold">Week 2:</span>
+                                                        Importance of Communication</b></span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: What is communication and why is it vital to communicate;
+                                                    understanding the purpose behind communication </p>
+                                                <p>Session 2: Different forms of communication: verbal, non-verbal, and
+                                                    more; how body language is instrumental in communicating confidently
+                                                </p>
+                                                <p>Session 3: Important vocal aspects of delivery- pace, emphasis,
+                                                    pause, diction, tone, volume, etc.</p>
+                                                <p>Session 4: How to avoid miscommunication, and ensure effective
+                                                    communication</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseThree"><span
+                                                        class="colored2"><span class="text-bold">Week 3:</span> Building
+                                                        Self-Confidence </span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Learning how both verbal and non-verbal behavior shows the
+                                                    level of confidence</p>
+                                                <p>Session 2: Busting the confidence myths; could it be that our
+                                                    conditioning has taught us the wrong meaning of confidence?</p>
+                                                <p>Session 3: Understanding the three realms of confidence: belief in
+                                                    your competence, belief in your ability to learn and solve problems,
+                                                    and belief in your own intrinsic worth</p>
+                                                <p>Session 4: Activities: self-assessment quiz, SWOT analysis </p>
+                                                <p>Session 5: Ways to build confidence: setting small and achievable
+                                                    goals, thinking positively, training continuously and more; adopting
+                                                    techniques for emergency self-confidence</p>
+                                                <p>Session 6: Self-confidence and assertiveness in social settings and
+                                                    negotiations; learning ways to overcome fear</p>
+                                                <p>Written Test</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFour">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseFour"><span
+                                                        class="colored2"><span class="text-bold">Week 4:</span>
+                                                        Inspiring Confidence from Others</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Understanding emotional intelligence and the pros and cons
+                                                    of reactions</p>
+                                                <p>Session 2: Learning how to be consistent in thinking and
+                                                    decision-making</p>
+                                                <p>Session 3: Learning time management skills, and the importance of
+                                                    time management</p>
+                                                <p>Session 4: Learning to listen effectively </p>
+                                                <p>Session 5: Activities: meditation, contact improvisation</p>
+                                                <p>Session 6: How to enable others to be confident </p>
+                                                <p>Written Test</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFive">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseFive"><span
+                                                        class="colored2"><span class="text-bold">Week 5:</span>
+                                                        Overcoming Fear of Public Speaking and Developing a Great
+                                                        Delivery</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: What is apprehension of public speaking </p>
+                                                <p>Session 2: What causes this apprehension</p>
+                                                <p>Session 3: How to overcome this fear; how to deal with difficult
+                                                    audiences/situations</p>
+                                                <p>Session 4: Learning how to begin, maintain, and end your speech</p>
+                                                <p>Session 5: Learning to use equipment such as microphone, clicker,
+                                                    podium</p>
+                                                <p>Session 6: Learning where and how to interact with the audience;
+                                                    audience engagement and activities</p>
+                                                <p>Session 7: Factors that every speech should have: audience-oriented,
+                                                    balanced, simplicity, and more.</p>
+                                                <p>Session 8: How to illustrate your speech with examples</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSix">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseSix"><span
+                                                        class="colored2"><span class="text-bold">Week 6:</span>
+                                                        Presentation Skills</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Understanding what a good presentation is, and its
+                                                    importance</p>
+                                                <p>Session 2: Learning the art of giving good presentations</p>
+                                                <p>Session 3: Learning about the different kinds of presentation to be
+                                                    delivered in various settings (informative, instructive,
+                                                    creative/artistic, engaging, persuasive, professional, political,
+                                                    and more, in schools, colleges, offices, and more.)</p>
+                                                <p>Session 4: Dealing with Q&A sessions</p>
+                                                <p>Written Test</p>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSeven">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseSeven"><span
+                                                        class="colored2"><span class="text-bold">Week 7:</span>
+                                                        Different Kinds of Public Speeches</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Understanding the different types of public speaking</p>
+
+                                                <p>Session 2: Factors to remember while delivering a certain kind of
+                                                    public speech</p>
+                                                <p>Session 3: Case studies/sample videos of different types of public
+                                                    speaking</p>
+                                                <p>Written Test</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingHead3">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn colored2" data-toggle="collapse" data-target="#collapseHead3">
+                            <span class="colored2"><span class="text-bold">Course <span
+                                        class="colored">2</span></span>&nbsp; Entrepreneurship and
+                                Leadership Training
+                            </span></button>
+                    </h2>
+                </div>
+                <!-- <div id="collapseHead3" class="collapse" aria-labelledby="headingHead3" data-parent="#accordionExample">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="bs-example">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header border-top-0" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link colored2"
+                                                    data-toggle="collapse" data-target="#collapseEight">
+                                                    <span class="colored2"><span class="text-bold">Week 8:</span>
+                                                        Basics
+                                                        of Entrepreneurship</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseEight" class="collapse" aria-labelledby="headingOne"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: What is Entrepreneurship</p>
+                                                <p>Session 2: Understanding the attributes of a good entrepreneur
+                                                </p>
+                                                <p>Session 3: Ideation: How to get an idea for your own startup and
+                                                    understanding the feasibility and viability of an idea</p>
+                                                <p>Session 4: Developing a problem solving attitude</p>
+                                                <p>Session 5: Procedures and Legalities of setting up a company</p>
+                                                <p>Session 6: Mistakes that kill a startup</p>
+                                                <p>Session 7: Case Studies</p>
+                                                <p>Written Test</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link colored2"
+                                                    data-toggle="collapse" data-target="#collapseNine">
+                                                    <span class="colored2"><span class="text-bold">Week 9:</span>
+                                                        Product Development </b></span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseNine" class="collapse" aria-labelledby="headingTwo"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: How to build a product: Design, Customization and
+                                                    Scalability</p>
+                                                <p>Session 2: How to sell</p>
+                                                <p>Session 3: How to market your product efficiently</p>
+                                                <p>Session 4: Understanding Digital Marketing: Different tools
+                                                    available
+                                                    on Facebook, WhatsApp and Instagram to market a product</p>
+                                                <p>Session 5: Understanding consumer behaviour</p>
+                                                <p>Hands-On-Activity</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTen"><span
+                                                        class="colored2"><span class="text-bold">Week 10:</span>
+                                                        Introduction to Leadership as a Quality</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTen" class="collapse" aria-labelledby="headingThree"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: What is leadership and why is it a quality </p>
+                                                <p>Session 2: Leadership in different areas</p>
+                                                <p>Session 3: Non-traditional ways of leadership: how leaders do not
+                                                    just belong in offices and organizations, but can also spark
+                                                    change
+                                                    at the grassroot level; case studies </p>
+                                                <p>Session 4: Why the world today needs more leaders from all walks
+                                                    of
+                                                    life</p>
+                                                <p>Session 5: Who is a good leader/What makes a good leader</p>
+                                                <p>Session 6: Understanding leadership ethics and moral principles
+                                                </p>
+                                                <p>Session 7 :Understanding the importance of ethical leadership and
+                                                    the
+                                                    benefits of an ethical team/corporate culture</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFour">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseEleven"><span
+                                                        class="colored2"><span class="text-bold">Week 11:</span>
+                                                        Building Your Leadership Skills</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseEleven" class="collapse" aria-labelledby="headingFour"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Understanding one’s own journey, achievements,
+                                                    strengths
+                                                    and weaknesses</p>
+                                                <p>Session 2: Understanding who your inspiring leader is and what
+                                                    characterizes them</p>
+                                                <p>Session 3: Understanding the relation between senses and emotions
+                                                </p>
+                                                <p>Session 4: Setting S.M.A.R.T and meaningful goals and
+                                                    expectations
+                                                    from oneself and the environment</p>
+                                                <p>Session 5: Understanding the importance of communication as a
+                                                    leader
+                                                </p>
+                                                <p>Session 6: Management skills; time management, dealing with
+                                                    challenges</p>
+                                                <p>Session 7: Understanding the importance of self-motivation and
+                                                    reinforcement</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFive">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwelve"><span
+                                                        class="colored2"><span class="text-bold">Week 12:</span>
+                                                        Team
+                                                        Facilitation and Leading</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwelve" class="collapse" aria-labelledby="headingFive"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Understanding the meaning and importance of a team</p>
+                                                <p>Session 2: Understanding how facilitation in a team works</p>
+                                                <p>Session 3: How to compose and structure a team: its size,
+                                                    diversity,
+                                                    values and goals</p>
+                                                <p>Session 4: Personal communications and rapport-building</p>
+                                                <p>Session 5: Skills and behaviors of effective team leaders </p>
+                                                <p>Session 6: How to give and receive constructive feedback</p>
+                                                <p>Session 7: Learning to align rewards and behavior; how to
+                                                    motivate
+                                                    the team to ensure optimum participation and commitment</p>
+                                                <p>Session 8: Choosing a decision-making style: command,
+                                                    consultative,
+                                                    and consensus</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSix">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseThirteen"><span
+                                                        class="colored2"><span class="text-bold">Week 13:</span>
+                                                        Conflict Management and Resolution</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseThirteen" class="collapse" aria-labelledby="headingSix"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: What are conflicts, and why are they inevitable</p>
+                                                <p>Session 2: Different types of conflicts- internal conflicts
+                                                    (mental,
+                                                    physical, emotional, spiritual), group conflicts, and more.</p>
+                                                <p>Session 3: Why is conflict management/resolution vital</p>
+                                                <p>Session 4: Different strategies of conflict management, keys to
+                                                    prevention, how to deal with confrontations</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSeven">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseFourteen"><span
+                                                        class="colored2"><span class="text-bold">Week 14:</span>
+                                                        Organizational Leadership in the 21st
+                                                        Century</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseFourteen" class="collapse" aria-labelledby="headingSeven"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: What is organizational leadership</p>
+                                                <p>Session 2: Understanding economic models, globalization and their
+                                                    problems</p>
+                                                <p>Session 3: Learning about the key skills and methods involved in
+                                                    running organizations today</p>
+                                                <p>Session 4: Understanding what makes an effective team/advisory
+                                                    board
+                                                </p>
+                                                <p>Session 5: Adventures of a 21st century leader, to-do list for
+                                                    today’s CEOs</p>
+                                                <p>Session 6: How to lead change in organizations</p>
+                                                <p>Session 7: Case Studies of Business Tycoons such as Bill Gates,
+                                                    Warren Buffet, and more</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingHead2">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn colored2" data-toggle="collapse" data-target="#collapseHead2">
+                            <span class="colored2"><span class="text-bold">Course <span
+                                        class="colored">3</span></span>&nbsp; Job Readiness and
+                                Training</span></button>
+                    </h2>
+                </div>
+                <!-- <div id="collapseHead2" class="collapse" aria-labelledby="headingHead2" data-parent="#accordionExample">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="bs-example">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header border-top-0" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link colored2"
+                                                    data-toggle="collapse" data-target="#collapseFifteen">
+                                                    <span class="colored2"><span class="text-bold">Week 15:</span>
+                                                        Introduction </span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseFifteen" class="collapse" aria-labelledby="headingOne"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: What is job readiness</p>
+                                                <p>Session 2: Understanding why job readiness is important</p>
+                                                <p>Session 3: Why is it important to be trained for jobs</p>
+                                                <p>Session 4: What skills can be acquired by this training </p>
+                                                <p>Session 5: Finding jobs on Facebook</p>
+                                                <p>Session 6: Case studies </p>
+
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link colored2"
+                                                    data-toggle="collapse" data-target="#collapseSixteen">
+                                                    <span class="colored2"><span class="text-bold">Week 16:</span>
+                                                        Knowing Your Job </b></span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSixteen" class="collapse" aria-labelledby="headingTwo"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Why is it important to know your job </p>
+                                                <p>Session 2: Understanding your own profile</p>
+                                                <p>Session 3: Effective job-hunting strategies</p>
+                                                <p>Session 4: Knowing your options and interests- freelance,
+                                                    corporate,
+                                                    and work-from-home.</p>
+                                                <p>Session 5: Aligning priorities and expectations </p>
+                                                <p>Session 6: Knowing alternatives to existing job</p>
+
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseSeventeen"><span
+                                                        class="colored2"><span class="text-bold">Week 17:</span>
+                                                        Resume
+                                                        Building Skills</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSeventeen" class="collapse" aria-labelledby="headingThree"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Learning how to write a cover letter</p>
+                                                <p>Session 2: Learning how to write a resume </p>
+                                                <p>Session 3: Difference between good and bad resumes/ samples</p>
+                                                <p>Session 4: How and why to keep updating your resume </p>
+                                                <p>Session 5: Why you should have not just one but different resumes
+                                                    for
+                                                    yourself</p>
+
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFour">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseEighteen"><span
+                                                        class="colored2"><span class="text-bold">Week 18:</span>
+                                                        Interview Practices </span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseEighteen" class="collapse" aria-labelledby="headingFour"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Learning about types of interviews</p>
+                                                <p>Session 2: Learning about verbal and non-verbal signs of
+                                                    communication</p>
+                                                <p>Session 3: Busting myths about confidence; how to carry yourself
+                                                    in a
+                                                    way that is courteous and polite, yet confident</p>
+                                                <p>Session 4: How to make an impressive first impression</p>
+                                                <p>Session 5: How to deal with difficult questions </p>
+
+                                                <p>Written Test</p>
+                                                <p>Hands-On-Activity</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFive">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseNineteen"><span
+                                                        class="colored2"><span class="text-bold">Week 19:</span>
+                                                        Skills
+                                                        That Make You Employable/Excel</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseNineteen" class="collapse" aria-labelledby="headingFive"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Understanding the power of first impressions, and what
+                                                    it
+                                                    takes to maintain a good impression</p>
+                                                <p>Session 2: Learning about the various skills (technical and
+                                                    non-technical) that organizations look for in potential
+                                                    employees,
+                                                    and how to attain them</p>
+                                                <p>Session 3: Learning how to excel at the job you already have</p>
+                                                <p>Session 4: Learning how to develop and learn more skills other
+                                                    than
+                                                    the job you already have</p>
+
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSix">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwenty"><span
+                                                        class="colored2"><span class="text-bold">Week 20:</span>
+                                                        Dealing
+                                                        with Difficult Choices at Work/Challenges</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwenty" class="collapse" aria-labelledby="headingSix"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Understanding the meaning and importance of work-life
+                                                    balance</p>
+                                                <p>Session 2: How to deal with long hours at the workplace</p>
+                                                <p>Session 3: How to deal with criticism and feedbacks</p>
+                                                <p>Session 4: How to make your point in the workplace</p>
+                                                <p>Session 5: How to communicate your concerns to your boss</p>
+
+                                                <p>Written Test</p>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSeven">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwentyOne"><span
+                                                        class="colored2"><span class="text-bold">Week 21:</span>
+                                                        PoSH</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwentyOne" class="collapse" aria-labelledby="headingSeven"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Learning about ethical practices at the workplace</p>
+                                                <p>Session 2: What is sexual harassment and what are its various
+                                                    forms
+                                                </p>
+                                                <p>Session 3: Understanding the Sexual Harassment of Women at
+                                                    Workplace
+                                                    Act, 2013</p>
+                                                <P>Session 4: Understanding about the Internal Complaints Committee
+                                                    and
+                                                    its functioning</p>
+                                                <p>Session 5: Case studies of sexual harassment at workplace: Rupan
+                                                    Deol
+                                                    v/s KPS Gill, Vishaka v/s State of Rajasthan, and more</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingHead4">
+                    <h2 class="mb-0">
+                        <button type="button" class="btn colored2" data-toggle="collapse" data-target="#collapseHead4">
+                            <span class="colored2"><span class="text-bold">Course <span
+                                        class="colored">4</span></span>&nbsp; Digital Skills</span></button>
+                    </h2>
+                </div>
+                <!-- <div id="collapseHead4" class="collapse" aria-labelledby="headingHead4" data-parent="#accordionExample">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="bs-example">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header border-top-0" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwentyTwo">
+                                                    <span class="colored2"><span class="text-bold">Week 22:</span>
+                                                        Introduction </span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwentyTwo" class="collapse" aria-labelledby="headingOne"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Introduction to history of digitization, and
+                                                    digitization
+                                                    in India</p>
+                                                <p>Session 2: What are digital skills and why are they important</p>
+                                                <p>Session 3: Digital literacy and statistics, understanding the
+                                                    gender
+                                                    gap in digital literacy</p>
+                                                <p>Session 4: Case studies and impact stories to corroborate the
+                                                    importance of digital literacy</p>
+
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwentyThree">
+                                                    <span class="colored2"><span class="text-bold">Week 23:</span>
+                                                        Basic
+                                                        Microsoft Office Skills</b></span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwentyThree" class="collapse" aria-labelledby="headingTwo"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Learning the basics of using MS Word</p>
+                                                <p>Session 2: Learning the basics of MS Excel</p>
+
+                                                <p>Hands-On-Activity</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwenttyFour"><span
+                                                        class="colored2"><span class="text-bold">Week 24:</span>
+                                                        Basic
+                                                        Microsoft Office Skills (cotd.)</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwentyFour" class="collapse" aria-labelledby="headingThree"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Learning the basics of MS Powerpoint</p>
+
+                                                <p>Hands-On-Activity</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFour">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwentyFive"><span
+                                                        class="colored2"><span class="text-bold">Week 25:</span>
+                                                        Basics
+                                                        of Digital Marketing</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwentyFive" class="collapse" aria-labelledby="headingFour"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: What is digital marketing and why is it important</p>
+                                                <p>Session 2: Learning Search Engine Optimization </p>
+                                                <p>Session 3: Learning to take businesses online </p>
+                                                <p>Session 4: Social media marketing on Facebook and Instagram<</p> <p>
+                                                        Hands-On-Activity</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFive">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwentySix"><span
+                                                        class="colored2"><span class="text-bold">Week 26:</span>
+                                                        Basics
+                                                        of Video-Editing</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwentySix" class="collapse" aria-labelledby="headingFive"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Principles of video editing</p>
+                                                <p>Session 2: How to create a project</p>
+                                                <p>Session 3: How to import audio and video files</p>
+                                                <p>Session 4: How to trim videos</p>
+                                                <p>Session 5: How to crop videos</p>
+                                                <p>Session 6: How to compile two separate video files into one </p>
+
+                                                <p>Hands-On-Activity</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSix">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwentySeven"><span
+                                                        class="colored2"><span class="text-bold">Week 27:</span>
+                                                        Basics
+                                                        of Graphic Design</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwentySeven" class="collapse" aria-labelledby="headingSix"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Principles of video editing</p>
+                                                <p>Session 2: How to create a project</p>
+                                                <p>Session 3: How to import audio and video files</p>
+                                                <p>Session 4: How to trim videos</p>
+                                                <p>Session 5: How to crop videos</p>
+                                                <p>Session 6: How to compile two separate video files into one </p>
+
+                                                <p>Hands-On-Activity</p>
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSeven">
+                                            <h2 class="mb-0">
+                                                <button type="button" class="btn btn-link collapsed colored2"
+                                                    data-toggle="collapse" data-target="#collapseTwentyEight"><span
+                                                        class="colored2"><span class="text-bold">Week 28:</span>
+                                                        Ethical
+                                                        Digital Practices</span></button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwentyEight" class="collapse" aria-labelledby="headingSeven"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Session 1: Understanding the meaning and importance of digital
+                                                    ethics
+                                                </p>
+                                                <p>Session 2: Kinds of ethical digital practices </p>
+                                                <p>Session 3: The challenges to digital ethics</p>
+                                                <p>Session 4: Case studies</p>
+                                                <p>Session 5: Future of digital ethics</p>
+
+                                                <p>Written Test</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer" class="mt-5">
+                <div class="container">
+                    <div class="row" style="vertical-align: middle;">
+                        <div class="col-12 mt-5 text-white text-center">
+                            Copyright © 2020. All rights reserved. Content Managed by Ministry of Tribal
+                            Affairs,
+                            Government
+                            of
+                            India.
+                        </div>
+                    </div>
+                    <div class="row" style="vertical-align: middle;">
+                        <div class="col-12 text-center center-block mt-4">
+                            <a href="#" class="social-footer">
+                                <img src="assets/media/facebook-f.svg" class="mx-3 himg" width="20px" height="20px">
+                            </a>
+                            <a href="#" class="social-footer"><img src="assets/media/facebook-messenger-white.svg"
+                                    class="mx-3 himg" width="20px" height="20px"></a>
+                            <a href="#" class="social-footer"><img src="assets/media/instagram.svg" class="mx-3 himg"
+                                    width="20px" height="20px"></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Scripts -->
+            <script src="assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+            <script src="assets/vendor/bootstrap/js/popper.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+            <script src="assets/js/CourseInfo.js"></script>
+            <script src="assets/js/check-login-replace-ajax.js"></script>
+
+
+
+    </body>
+
+</html>

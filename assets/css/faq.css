@@ -1,0 +1,57 @@
+.bs-example {
+    margin: 20px;
+}
+
+.accordion .fa {
+    margin-right: 0.5rem;
+}
+
+h2 {
+    color: #1D7096;
+}
+
+.card-body {
+    background-color: #F5F6F8;
+    border: none;
+    border-top: 1px solid #35D5B5;
+    border-bottom: 1px solid #35D5B5;
+}
+
+.card-header {
+    background-color: white;
+    border: none;
+}
+
+.colored2 {
+    color: black;
+    text-decoration: none;
+}
+
+.card {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #35D5B5;
+    box-shadow: none;
+    max-width: 768px!important;
+    min-width: 768px!important;
+}
+
+.card-header{
+    border-bottom: 1px solid #35D5B5;
+    border-top: 1px solid #35D5B5;
+}
+
+@media screen and (max-width: 768px) and (min-width: 480px){
+  .card{
+    max-width: 480px!important;
+    min-width: 480px!important;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .card{
+    max-width: 280px!important;
+    min-width: 280px!important;
+  }
+}

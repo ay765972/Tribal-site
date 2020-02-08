@@ -1,0 +1,70 @@
+.bs-example {
+  margin: 20px;
+}
+
+h2 {
+  color: #1D7096;
+}
+
+.card-body {
+  border: none;
+}
+
+.card-header {
+  background-color: white;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-bottom: 7px;
+  align: center;
+  border: black;
+  border: 0px;
+}
+
+.colored2 {
+  color: #707070;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.card {
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  margin-bottom: 7px;
+  box-shadow: none;
+  max-width: 900px !important;
+  min-width: 900px !important;
+
+}
+
+@media screen and (max-width: 768px) and (min-width: 480px) {
+  .card {
+    max-width: 480px !important;
+    min-width: 480px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    max-width: 280px !important;
+    min-width: 280px !important;
+  }
+}
+
+.text-bold {
+  color: black;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: grey;
+}

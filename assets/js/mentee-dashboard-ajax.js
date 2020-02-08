@@ -1,0 +1,116 @@
+$(document).ready(() => {
+  var currentUserId = window.sessionStorage.getItem('loginUserId');
+  if (!currentUserId) {
+    alert('user not logged in');
+    window.location.replace('/login');
+  }
+
+  function logOut() {
+    window.sessionStorage.removeItem('loginUserId');
+    currentUserId = null;
+    window.location.replace('/');
+  }
+
+  var totalItems = 0;
+  var currentTotalItems = 0;
+  var currentCount = 0;
+  var ptr = 0;
+  var idArr = [0];
+
+  function setTableData(userList) {
+    currentCount = userList.length;
+    $("#menteeDashTBody tr").each((i, e) => {
+      $(e).remove();
+    });
+
+    var tBody = "";
+
+    userList.forEach((e) => {
+      let eStatus = 'Awaiting';
+      if(e.Status === 2 ){
+        eStatus = 'Shortlisted';
+      } else if(e.Status === 1){
+        eStatus = 'Rejected';
+      }
+      tBody += `<tr>
+            <td>${e.ApplicationDate ? e.ApplicationDate : '-'}</th>
+            <td><a href="mentee-form-with-id.html?id=${e.UserId}" style="color: black">${e.Name ? e.Name : '-'}</a></td>
+            <td>${e.Score ? e.Score : '-'}</td>
+            <td>${eStatus}</td>
+        </tr>`;
+    });
+
+    $("#menteeDashTBody").append(tBody);
+  }
+
+  function getMenteeList(k) {
+    if (k === 1) {
+      ptr = ptr + 1;
+    } else if (k === -1 && ptr === 0) {
+      ptr = 0;
+    } else if (k === -1 && ptr > 0) {
+      ptr = ptr - 1;
+    }
+    var menteeDashData = {
+      ApiKey: "387701ce17103bdd13cbc7acfcf840be9049a85f",
+      UserId: currentUserId,
+      UpdatedId: idArr[ptr],
+      UserType: "M_100"
+    }
+    $.ajax({
+      type: 'POST',
+      data: menteeDashData,
+      url: 'https://goal.joshtalks.org/api/app/user/GetUserList',
+      success: function (data) {
+        console.log(data.response)
+        if (data && data.response) {
+          totalItems = data.response.TotalCount;
+          if (k === 0) {
+            idArr[1] = data.response.UpdatedId;
+          } else if (k === 1 && !idArr[ptr + 1]) {
+            idArr[ptr + 1] = data.response.UpdatedId;
+          }
+          if (k === -1) {
+            currentTotalItems = currentTotalItems - currentCount;
+          } else {
+            currentTotalItems += data.response.Count;
+          }
+          currentCount = data.response.Count;
+          setTableData(data.response.User);
+          handlePagingBtns();
+        }
+      }
+    });
+  }
+
+  $("#prevM").click(function () {
+    getMenteeList(-1);
+  });
+
+  $("#fwdM").click(function () {
+    if (currentTotalItems !== totalItems) {
+      getMenteeList(1);
+    }
+  });
+
+  function handlePagingBtns() {
+
+    if (ptr === 0) {
+      $("#prevM").prop('disabled', true);
+    } else {
+      $("#prevM").prop('disabled', false);
+    }
+    if (currentTotalItems === totalItems) {
+      $("#fwdM").prop('disabled', true);
+    } else {
+      $("#fwdM").prop('disabled', false);
+    }
+  }
+
+  getMenteeList(0);
+
+  $("#logoutBtn").click(function (e) {
+    logOut();
+  })
+
+})

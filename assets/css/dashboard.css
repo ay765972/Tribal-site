@@ -1,0 +1,47 @@
+td {
+  text-align: center;
+  color: #010101;
+}
+
+th {
+  text-align: center;
+}
+
+table {
+  width: 800px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+thead {
+  height: 108px;
+  background-color: #EDEEF2;
+}
+
+.appW {
+  width: 15%;
+}
+
+.namW {
+  width: 30%;
+}
+
+.scoW {
+  width: 10%;
+}
+
+.valW {
+  width: 20%;
+}
+
+.staW {
+  width: 20%;
+}
+
+body {
+  background-color: white;
+}

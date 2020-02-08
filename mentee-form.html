@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags For SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mentee Form</title>
+
+    <!-- Linking Stylesheets, CDNS, Fonts, Favicons -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" href="assets/images/favicon/favicon.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/mentee-form.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
+    <noscript>Your browser does not support JavaScript!</noscript>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="preloader"></div>
+
+    <!-- Navbar -->
+
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-md navbar-inverse navbar-custom2 fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="hideme">
+                        <div class="d-flex justify-content-start mt-0 mb-5">
+                            <ul class="navbar-nav">
+                                <li class="nav-item nav1-t1">
+                                    <p class="mx-3">
+                                        <a href="https://www.india.gov.in" target="_blank"
+                                            class="custom-link">GOVERNMENT OF INDIA
+                                        </a>
+                                    </p>
+                                </li>
+                                <li class="nav-item nav1-t2">
+                                    <p class="mx-3">
+                                        <a href="https://tribal.nic.in" target="_blank" class="custom-link">MINISTRY OF
+                                            TRIBAL AFFAIRS
+                                        </a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-0 mb-5">
+                    <ul class="navbar-nav">
+                        <li class="nav-item nav1-t3">
+                            <p class="mx-3">
+                                <a href="check-status.html" class="custom-link4 nav1-t4">Check Status
+                                </a>
+                            </p>
+                        </li>
+                        <li class="nav-item nav1-t3">
+                            <p class="mx-3">
+                                <a href="login.html" class="custom-link2 nav1-t3">Login
+                                </a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-md navbar-inverse navbar-custom3 fixed-top"
+            style="position: absolute;margin-top: 35px;">
+            <div class="mr-auto">
+                <img src="assets/media/Goal.jpg" alt="" width="190.22375430899405px" height="80px" />
+            </div>
+            <div class="ml-auto hideme">
+                <img src="assets/media/Facebook.gif" alt="" width="205px" height="85px"
+                    class="navbar-nav mx-3 d-inline hideme" />
+                <a href="https://tribal.nic.in" target="_blank">
+                    <img src="assets/media/Ministry.jpg" alt="" width="226.13400440390058px" height="80px"
+                        class="navbar-nav d-inline hideme" />
+                </a>
+            </div>
+            <div class="dropdown-divider"></div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg navbar-inverse navbar-custom fixed-top" style="margin-top: 130px;">
+            <button class="navbar-toggler custom-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="dropdown-divider"></div>
+                <ul class="navbar-nav mr-sm-auto text-center mx-lg-auto">
+                    <li class="nav-item active mx-3">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown mx-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="aboutministry.html">Ministry</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="aboutfacebook.html">Facebook</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="aboutgoal.html">The Program</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Apply As Mentee
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="faqs-mentee.html">FAQs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="mentee-form.html">Registration Form</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Apply As Mentor
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="faqs-mentor.html">FAQs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="mentor-form.html">Registration Form</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="knowPortal.html">Knowledge
+                            Portal</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                </ul>
+                <div class="down-divider"></div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Group Photo -->
+    <div class="masthead"></div>
+
+    <!-- Section 1 -->
+    <section id="section" class="mt-5 mb-5">
+        <div class="container">
+            <!-- MultiStep Form -->
+            <div class="row justify-content-center">
+                <form id="regForm" name="regForm" action="index.html" method="post">
+                    <h1 class="font-bold"><b class="colored">Apply As A Mentee</b></h1>
+                    <div class="text-center mt-4">
+                        <span class="step2">Personal Details</span>
+                        <span class="step2">General Details</span>
+                        <span class="step2">Attach Documents</span>
+                    </div>
+                    <div class="tab">
+                        <div class="mt-4">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input id="firstName" type="text" name="FirstName" placeholder="First Name"
+                                             class="form-control" />
+                                        
+                                            <p id="error" style="color: red;"></p>
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <label for="middleName" class="form-label optional">Middle Name</label>
+                                        <input id="middleName" type="text" name="middleName" placeholder="Middle Name"
+                                            class="form-control" />
+                                            <p id="middlenameError" style="color: red;"></p>
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input id="lastName" type="text" name="lastName" placeholder="Last Name"
+                                            required class="form-control" />
+                                            <p id="lastNameError" style="color: red;"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="FatherName" class="form-label">Father's Name</label>
+                                        <input id="fatherName" type="text" name="FathertName"
+                                            placeholder="Father's Name" required class="form-control" />
+                                            <p id="fatherNameError" style="color: red;"></p>
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <label for="FatherOccupation" class="form-label">Father's
+                                            Occupation</label>
+                                        <input id="fatherOccupation" type="text" name="FatherOccupation"
+                                            placeholder="Father's Occupation" required class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="MotherName" class="form-label">Mother's Name</label>
+                                        <input id="motherName" type="text" name="MothertName"
+                                            placeholder="Mother's Name" required class="form-control" />
+                                            <p id="motherNameError" style="color: red;"></p>
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <label for="MotherOccupation" class="form-label">Mother's
+                                            Occupation</label>
+                                        <input id="motherOccupation" type="text" name="MotherOccupation"
+                                            placeholder="Mother's Occupation" required class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="Gender" class="form-label">Gender</label>
+                                        <select id="chooseGender" class="form-control" name="Gender" required>
+                                            <option value="gender" selected disabled>Choose Your Gender
+                                            </option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="DOB" class="form-label">Date of Birth</label>
+                                        <div id="clickTooltip" class="d-inline" data-toggle="tooltip"
+                                            data-tippy-content="For proof of age, please attach Birth Certificate/ Ration Card/ 10th Class Certificate">
+                                            &nbsp;&nbsp;<img src="assets/media/info.svg" /></div>
+                                        <input id="dob" type="date" name="DOB" placeholder="DD-MM-YY" required
+                                            class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Do you belong to a PVTG?</label>
+                                        <div id="clickTooltip" class="d-inline" data-toggle="tooltip"
+                                            data-tippy-content="The Ministry of Home Affairs has catergorized 75 tribal groups as Particularly Vulnerable Tribal Groups (PVTG)s. PVTGs reside in 18 States and UT of A&N Islands. The Ministry of Tribal Affairs has implemented the scheme “Development of Particularly Vulnerable Tribal Groups (PVTGs)” exclusively for them. Under this scheme, each State/UT is to prepare Conservation-cum-Development (CCD)/Annual Plans for the PVTGs based on their need assessment, which are then appraised and approved by the Project Appraisal Committee of the Ministry. Activities for development of PVTGs are undertaken in sectors of Education, Health, Livelihood and Skill Development, Agricultural Development, Housing & Habitat, and Conservation of Culture.">
+                                            &nbsp;&nbsp;<img src="assets/media/info.svg" /></div>
+                                        <label class=" radio-inline mx-2 my-2">Yes
+                                            <input id="ispvtgY" type="radio" name="IsPVTG" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input id="ispvtgN" type="radio" name="IsPVTG" value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <p>
+                                <b>Select Your State, City, District & Village &downarrow;</b>
+                            </p>
+                            <p>
+                                Residential Address
+                            </p>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="StateId" class="form-label">Select State</label>
+                                        <select id="chooseState" class="form-control" name="StateId" required>
+                                            <option value="Select State" selected disabled>Select State
+                                            </option>
+                                            <!-- <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli
+                                            </option>
+                                            <option value="Daman and Diu">Daman and Diu</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="Orissa">Orissa</option>
+                                            <option value="Puducherry">Puducherry</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="Uttarakhand">Uttarakhand</option>
+                                            <option value="West Bengal">West Bengal</option>-->
+                                        </select>
+                                    </div>
+
+                                    <!--
+                                    <div class="mx-4 my-2">
+                                        <label for="CityId" class="form-label">Select City</label>
+                                        <select id="chooseCity" class="form-control" name="CityId" required>
+                                            <option value="Select City" selected disabled>Select City
+                                            </option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div> -->
+
+
+                                    <div class="mx-4 my-2">
+                                        <label for="DisttId" class="form-label">Select District</label>
+                                        <select id="chooseDistrict" class="form-control" name="DisttId" required>
+                                            <option value="Select District" selected disabled>Select
+                                                District
+                                            </option>
+                                            <!-- <option value=""></option>
+                                            <option value=""></option> -->
+                                        </select>
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <label for="SubDisttId" class="form-label">Select Sub District</label>
+                                        <select id="chooseSubDistrict" class="form-control" name="SubDisttId" required>
+                                            <option value="Select Sub District" selected disabled>Select
+                                                Sub District
+                                            </option>
+                                            <!-- <option value=""></option>
+                                            <option value=""></option> -->
+                                        </select>
+                                    </div>
+
+
+                                    <div class="mx-4 my-2">
+                                        <label for="VillageId" class="form-label">Select Village</label>
+                                        <select id="chooseVillage" class="form-control" name="VillageId" required>
+                                            <option value="Select Village" selected disabled>Select Village
+                                            </option>
+                                            <!-- <option value=""></option>
+                                            <option value=""></option> -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="address" class="form-label">Address</label>
+
+                                        <textarea id="address" placeholder="Address" name="address" required
+                                            class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mt-3">
+                            <p>
+                                Permanent Address
+                            </p>
+                            <div class="form-check">
+                                <input id="sameAddress" class="form-check-input" type="checkbox" name="sameAddress" />
+                                <label class="form-check-label" for="sameAddress"> Same as residential address</label>
+                            </div>
+                            <div id="PAdd-1" class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="PStateId" class="form-label">Select State</label>
+                                        <select id="PchooseState" class="form-control" name="PStateId" required>
+                                            <option value="Select State" selected disabled>Select State
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mx-4 my-2">
+                                        <label for="PDisttId" class="form-label">Select District</label>
+                                        <select id="PchooseDistrict" class="form-control" name="PDisttId" required>
+                                            <option value="Select District" selected disabled>Select
+                                                District
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <label for="PSubDisttId" class="form-label">Select Sub District</label>
+                                        <select id="PchooseSubDistrict" class="form-control" name="PSubDisttId"
+                                            required>
+                                            <option value="Select Sub District" selected disabled>Select
+                                                Sub District
+                                            </option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="mx-4 my-2">
+                                        <label for="PVillageId" class="form-label">Select Village</label>
+                                        <select id="PchooseVillage" class="form-control" name="PVillageId" required>
+                                            <option value="Select Village" selected disabled>Select Village
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="PAdd-2" class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="Paddress" class="form-label">Address</label>
+
+                                        <textarea id="Paddress" placeholder="Address" name="Paddress" required
+                                            class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label for="EmailId" class="form-label">Email ID</label>
+                                        <input id="email" type="email" name="EmailId" placeholder="Email ID" required
+                                            class="form-control" />
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <label for="PhoneNumber" class="form-label">Mobile Number</label>
+
+                                        <input id="phoneNumber" type="tel" name="PhoneNumber" placeholder="Phone Number"
+                                            required class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label id="que1" for="ans1"></label>
+
+                                        <textarea id="ans1" placeholder="Write your answer here..." name="ans1"
+                                            class="form-control" rows="4" cols="100"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label id="que2" for="ans2"></label>
+
+                                        <textarea id="ans2" placeholder="Write your answer here..." name="ans2"
+                                            class="form-control" rows="4" cols="100"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label id="que3" for="ans3"></label>
+
+                                        <textarea id="ans3" placeholder="Write your answer here..." name="ans3"
+                                            class="form-control" rows="4" cols="100"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- General Details -->
+                    <div class="tab">
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Nomination?</label>
+                                        <div id="clickTooltip" class="d-inline" data-toggle="tooltip"
+                                            data-tippy-content="Please select yes, if you have been nominated for the GOAL program by any MP/ MLA, Gol class 1 officers, Head of TRI/ ITDPs District Level, PRI Representatives, Reputed NGOs funded by MoTA, CoEs Corporate Organisation, NGO & other Business Organisation.">
+                                            &nbsp;&nbsp;<img src="assets/media/info.svg" /></div>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input id="nominationY" type="radio" name="IsNominate" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input id="nominationN" type="radio" name="IsNominate"
+                                                value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3" id="nominationDrop1Head">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Nomination Type</label>
+                                        <select id="nominationDrop1" class="form-control" name="nominationDrop1"
+                                            required>
+                                            <option value="Select Nomination" selected disabled>Select Nomination
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="mt-3" id="nominationDrop2Head">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Nominate by</label>
+                                        <select id="nominationDrop2" class="form-control" name="nominationDrop2"
+                                            required>
+                                            <option value="Select Nomination" selected disabled>Select Nominate by
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Do you have any Work Experience?</label>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input id="workExpY" type="radio" name="IsExp" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input id="workExpN" type="radio" name="IsExp" value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3" id="workExpDD">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Work Experience</label>
+                                        <select id="WorkExp" class="form-control" name="WorkExp" required>
+                                            <option value="chooseExp" selected disabled>Choose Work Experience
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Access to technology</label>
+                                        <select id="chooseTech" class="form-control" name="AccessToTech" required>
+                                            <option value="chooseTech" selected disabled>Choose Any one
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Have You Recieved any Award?</label>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input type="radio" name="IsAwardRec" value="True" id="isAwardY"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input type="radio" name="IsAwardRec" value="False" id="isAwardN" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3" id="awardTypeDD">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Which Award?</label>
+                                        <select id="awardType" class="form-control" name="awardType" required>
+                                            <option value="award" selected disabled>Type of Award
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Are you differently abled?</label>
+                                        <div id="clickTooltip" class="d-inline" data-toggle="tooltip"
+                                            data-tippy-content="If you are differently abled, please attach the Physical Disability Certificate">
+                                            &nbsp;&nbsp;<img src="assets/media/info.svg" /></div>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input type="radio" name="IsDifferentlyAbled" value="True" required
+                                                id="isDiffY" /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input type="radio" name="IsDifferentlyAbled" value="False"
+                                                id="isDiffN" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Are you a member of any Self Help Group
+                                            (SHG)?</label>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input id="shgY" type="radio" name="MemberOfSHG" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input id="shgN" type="radio" name="MemberOfSHG" value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Name of Tribe</label>
+                                        <input id="TribeName" class="form-control" name="TribeName"
+                                            placeholder="Name of Your Tribe" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Family's Annual Income</label>
+                                        <select id="familyIncome" class="form-control" name="AnnInc" required>
+                                            <option value="chooseAnnInc" selected disabled>Family's Income(in &#x20B9;)
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-group">
+                                <div class="row">Select Languages You are fluent In:
+                                    <div id="clickTooltip" class="d-inline" data-toggle="tooltip"
+                                        data-tippy-content="Assamese, Bengali, Bodo, Dogri, Gujarati, Hindi, Kannada, Kashmiri, Konkani, Maithili, Malayalam, Manipuri, Marathi, Nepali, Oriya, Punjabi, Sanskrit, Santhali, Sindhi, Tamil, Telugu and Urdu">
+                                        &nbsp;&nbsp;<img src="assets/media/info.svg" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="mx-4 my-2">
+                                                    <label class="form-label">Preference 1</label>
+                                                    <select id="chooseLanguage1" class="form-control"
+                                                        name="chooseLanguage1" required>
+                                                        <option value="Lang1" selected disabled>Your First
+                                                            Preference
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="mx-4 my-2">
+                                                    <label class="form-label">Preference 2</label>
+                                                    <select id="chooseLanguage2" class="form-control"
+                                                        name="chooseLanguage2" required>
+                                                        <option value="Lang2" selected disabled>Your Second
+                                                            Preference
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mx-4 my-2">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="mx-4 my-2">
+                                                    <label class="form-label">Preference 3</label>
+                                                    <select id="chooseLanguage3" class="form-control"
+                                                        name="chooseLanguage3" required>
+                                                        <option value="Lang3" selected disabled>Your Third
+                                                            Preference
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Educational Qualification</label>
+                                        <select id="EduQualification" class="form-control" name="EduQualification"
+                                            required>
+                                            <option value="choodeEdu" selected disabled>Choose Your Educational
+                                                Qualification
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">Choose your Area Of Interest and Sub Category
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="mx-4 my-2">
+                                                <label class="form-label">Area of Interest</label>
+                                                <select id="AreaOfInterest" class="form-control" name="AreaOfInterest"
+                                                    required>
+                                                    <option value="chooseAreaInterest" selected disabled>Choose Your
+                                                        Area of Interest
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="chooseSubAreaDiv">
+                                        <div class="row">
+                                            <div class="mx-4 my-2">
+                                                <label class="form-label">Subcategory</label>
+                                                <select id="chooseSubArea" class="form-control" name="chooseSubArea"
+                                                    required>
+                                                    <option value="chooseSubArea" selected disabled>Choose Your
+                                                        Subcategory
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Loan availed from NSTFDC or MUDRA(Attach
+                                            Certificate)</label>
+                                        <div id="clickTooltip" class="d-inline" data-toggle="tooltip"
+                                            data-tippy-content="NSTFDC: National Scheduled Tribes Finance and Development Corporation MUDRA: Micro Units Development and Refinance Agency Bank">
+                                            &nbsp;&nbsp;<img src="assets/media/info.svg" /></div>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input type="radio" name="LoanAvailed" value="True" required
+                                                id="loanY" /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input type="radio" name="LoanAvailed" value="False" id="loanN" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Domicile Location</label>
+                                        <div id="clickTooltip" class="d-inline" data-toggle="tooltip"
+                                            data-tippy-content="Domicile location is the place where you currently reside in.">
+                                            &nbsp;&nbsp;<img src="assets/media/info.svg" /></div>
+                                        <select id="chooseDomicile" class="form-control" name="chooseDomicile" required>
+                                            <option value="chooseDomicile" selected disabled>Choose Domicile
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Do you have a bank account?</label>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input id="bankY" type="radio" name="BankAccount" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input id="bankN" type="radio" name="BankAccount" value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Does your village has access to Mobile
+                                            Internet?</label>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input id="mobileY" type="radio" name="AccessToInternetInArea" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input id="mobileN" type="radio" name="AccessToInternetInArea"
+                                                value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Has any family member enrolled in the same
+                                            program?</label>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input id="FamilyEnrY" type="radio" name="FamEnr" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input id="FamilyEnrN" type="radio" name="FamEnr" value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Are you Employed?</label>
+                                        <label class="radio-inline mx-2 my-2">Yes
+                                            <input id="jobY" type="radio" name="LookingForJob" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">No
+                                            <input id="jobN" type="radio" name="LookingForJob" value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3" id="jobBuisnessInterest">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <label class="form-label">Do you have interest -</label>
+                                        <label class="radio-inline mx-2 my-2">Business
+                                            <input id="businessY" type="radio" name="StartBussiness" value="True"
+                                                required /></label>
+                                        <label class="radio-inline mx-2 my-2">Job
+                                            <input id="businessN" type="radio" name="StartBussiness"
+                                                value="False" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="mx-4 my-2">
+                                        <input id="checkBox" type="checkbox" name="certify" required />
+                                        <label class="form-label" for="certify">
+                                            <b>I certify</b> that the statements made by
+                                            me in
+                                            answer to the foregoing questions are true, complete and correct to
+                                            the best
+                                            of my knowledge and belief.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Uploads -->
+                    <div class="tab">
+                        <div class="mt-4" id="casteDocuments">
+                            <label>
+                                <p><b>Caste Documents</b></p>
+                                <input id="casteDoc" type="file" name="casteDocuments" placeholder="Caste Documents"
+                                    required />
+                            </label>
+                        </div>
+                        <div class="mt-3">
+                            <label>
+                                <p><b>Date of Birth Documents</b></p>
+                                <input id="dobDoc" type="file" name="dobDocuments" placeholder="Date of Birth Documents"
+                                    required />
+                            </label>
+                        </div>
+                        <div class="mt-3">
+                            <label>
+                                <p><b>Education Documents</b></p>
+                                <input id="eduDoc" type="file" name="educationDocuments"
+                                    placeholder="Education Documents" required />
+                            </label>
+                        </div>
+                        <div class="mt-3">
+                            <label>
+                                <p><b>Work Experience Documents</b></p>
+                                <input id="workDoc" type="file" name="workexpDocuments"
+                                    placeholder="Work Experience Documents" required />
+                            </label>
+                        </div>
+                        <div class="mt-3" id="awardDocuments">
+                            <label>
+                                <p><b>Award Documents</b></p>
+                                <input id="awardDoc" type="file" name="awardDocuments" placeholder="Award Documents"
+                                    required />
+                            </label>
+                        </div>
+                        <!-- <div class="mt-3">
+                            <label>
+                                <p><b>Domicile Documents</b></p>
+                                <input id="domicileDoc" type="file" name="domicileDocuments"
+                                    placeholder="Domicile Documents" required />
+                            </label>
+                        </div> -->
+                        <div class="mt-3" id="loanDocuments">
+                            <label>
+                                <p><b>Loan Documents</b></p>
+                                <input id="loanDoc" type="file" name="loanDocuments" placeholder="Loan Documents"
+                                    required />
+                            </label>
+                        </div>
+                        <div class="mt-3" id="disabilityDocuments">
+                            <label>
+                                <p><b>Disability Documents</b></p>
+                                <input id="disabilityDoc" type="file" name="disabilityDocuments"
+                                    placeholder="Disablity Documents" required />
+                            </label>
+                        </div>
+                        <div class="mt-3" id="nominatedDocuments">
+                            <label>
+                                <p><b>Nominated Documents</b></p>
+                                <input id="nomDoc" type="file" name="nominatedDocuments"
+                                    placeholder="Nominated Documents" required />
+                            </label>
+                        </div>
+                        <div class="mt-3" id="MSMERegistrationDetails">
+                            <label>
+                                <p><b>MSME Registration Details</b></p>
+                                <input id="MSMERegistrationDetailsInput" type="file" name="MSMERegistrationDetails"
+                                    placeholder="MSME Registration Details" required />
+                            </label>
+                        </div>
+                        <!-- <div class="mt-3" id="pvtgDocuments">
+                            <label>
+                                <p><b>PVTG Documents</b></p>
+                                <input id="pvtgDoc" type="file" name="pvtgDocuments" placeholder="PVTG Documents"
+                                    required />
+                            </label>
+                        </div> -->
+                    </div>
+                    <!-- Control Buttons -->
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                            <div class="mt-3">
+                                <button class="controlBtn" type="button" id="nextBtn1"
+                                    onclick="nextPrev(1)">Next</button>
+                                <button class="controlBtn" type="button" id="prevBtn1"
+                                    onclick="nextPrev(-1)">Previous</button>
+                                <button class="controlBtn" type="button" id="nextBtn2"
+                                    onclick="nextPrev(1)">Next</button>
+                                <button class="controlBtn" type="button" id="prevBtn2"
+                                    onclick="nextPrev(-1)">Previous</button>
+                                <button class="controlBtn" type="button" id="subBtn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align:center;margin-top:40px;">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="mt-5">
+        <div class="container">
+            <div class="row" style="vertical-align: middle;">
+                <div class="col-12 mt-5 text-white text-center">
+                    Copyright © 2020. All rights reserved. Content Managed by Ministry of Tribal
+                    Affairs,
+                    Government
+                    of
+                    India.
+                </div>
+            </div>
+            <div class="row" style="vertical-align: middle;">
+                <div class="col-12 text-center center-block mt-4">
+                    <div id="clickTooltip" class="d-inline" class="social-footer">
+                        <img src="assets/media/facebook-f.svg" class="mx-3 himg" width="20px" height="20px">
+                        </a>
+                        <div id="clickTooltip" class="d-inline" class="social-footer"><img
+                                src="assets/media/facebook-messenger-white.svg" class="mx-3 himg" width="20px"
+                                height="20px"></a>
+                            <div id="clickTooltip" class="d-inline" class="social-footer"><img
+                                    src="assets/media/instagram.svg" class="mx-3 himg" width="20px" height="20px"></a>
+                            </div>
+                        </div>
+                    </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/popper.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/mentee-form.js"></script>
+    <script src="assets/js/mentee-form-ajax.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="assets/js/form-validation.js"></script>
+
+    <script>
+        $('#awardDocuments').hide();
+        $('#pvtgDocuments').hide();
+        $('#disabilityDocuments').hide();
+        $('#nominatedDocuments').hide();
+        $('#loanDocuments').hide();
+        $('#awardTypeDD').hide();
+        $('#workExpDD').hide();
+        $('#nominationDrop1Head').hide();
+        // $('#nominationDrop2Head').hide();
+        $("#casteDocuments").hide();
+        $('#MSMERegistrationDetails').hide();
+        $("#jobBuisnessInterest").hide();
+        $("#ispvtgY").click(function () {
+            if ($(this).is(":checked")) {
+                $("#pvtgDocuments").show();
+                $("#casteDocuments").show();
+            } else {
+                $("#pvtgDocuments").hide();
+                $("#casteDocuments").hide();
+            }
+        });
+        $("#ispvtgN").click(function () {
+            if ($(this).is(":checked")) {
+                $("#pvtgDocuments").hide();
+                $("#casteDocuments").hide();
+            } else {
+                $("#pvtgDocuments").show();
+                $("#casteDocuments").show();
+            }
+        });
+        $("#isDiffY").click(function () {
+            if ($(this).is(":checked")) {
+                $("#disabilityDocuments").show();
+            } else {
+                $("#disabilityDocuments").hide();
+            }
+        });
+        $("#isDiffN").click(function () {
+            if ($(this).is(":checked")) {
+                $("#disabilityDocuments").hide();
+            } else {
+                $("#disabilityDocuments").show();
+            }
+        });
+        $("#nominationY").click(function () {
+            if ($(this).is(":checked")) {
+                $("#nominatedDocuments").show();
+            } else {
+                $("#nominatedDocuments").hide();
+            }
+        });
+        $("#nominationN").click(function () {
+            if ($(this).is(":checked")) {
+                $("#nominatedDocuments").hide();
+            } else {
+                $("#nominatedDocuments").show();
+            }
+        });
+        $("#loanY").click(function () {
+            if ($(this).is(":checked")) {
+                $("#loanDocuments").show();
+            } else {
+                $("#loanDocuments").hide();
+            }
+        });
+        $("#loanN").click(function () {
+            if ($(this).is(":checked")) {
+                $("#loanDocuments").hide();
+            } else {
+                $("#loanDocuments").show();
+            }
+        });
+        $("#isAwardY").click(function () {
+            if ($(this).is(":checked")) {
+                $("#awardDocuments").show();
+                $("#awardTypeDD").show();
+            } else {
+                $("#awardDocuments").hide();
+                $("#awardTypeDD").hide();
+            }
+        });
+        $("#isAwardN").click(function () {
+            if ($(this).is(":checked")) {
+                $("#awardDocuments").hide();
+                $("#awardTypeDD").hide();
+            } else {
+                $("#awardDocuments").show();
+                $("#awardTypeDD").show();
+            }
+        });
+        $("#workExpY").click(function () {
+            if ($(this).is(":checked")) {
+                $("#workExpDD").show();
+            } else {
+                $("#workExpDD").hide();
+            }
+        });
+        $("#workExpN").click(function () {
+            if ($(this).is(":checked")) {
+                $("#workExpDD").hide();
+            } else {
+                $("#workExpDD").show();
+            }
+        });
+        $("#nominationY").click(function () {
+            if ($(this).is(":checked")) {
+                $("#nominationDrop1Head").show();
+                // $("#nominationDrop2Head").show();
+            } else {
+                $("#nominationDrop1Head").hide();
+                // $("#nominationDrop2Head").hide();
+            }
+        });
+        $("#nominationN").click(function () {
+            if ($(this).is(":checked")) {
+                $("#nominationDrop1Head").hide();
+                // $("#nominationDrop2Head").hide();
+            } else {
+                $("#nominationDrop1Head").show();
+                // $("#nominationDrop2Head").show();
+            }
+        });
+        $("#jobN").click(function () {
+            if ($(this).is(":checked")) {
+                $("#jobBuisnessInterest").show();
+            } else {
+                $("#jobBuisnessInterest").hide();
+            }
+        });
+        $("#jobY").click(function () {
+            if ($(this).is(":checked")) {
+                $("#jobBuisnessInterest").hide();
+            } else {
+                $("#jobBuisnessInterest").show();
+            }
+        });
+        $("#firstName").blur(function () {
+           var name =  $("#firstName"). val();
+               let result = /^[a-zA-Z ]+$/.test(name);
+               if(!result){
+                $("#error").text("Enter valid name");
+               }
+               else{
+                $("#error").text("");
+               }
+        });
+        $("#middleName").blur(function () {
+           var name =  $("#middleName"). val();
+               let result = /^[a-zA-Z ]+$/.test(name);
+               if(!result){
+                $("#middlenameError").text("Enter valid name");
+               }
+               else{
+                $("#middlenameError").text("");
+               }
+        });
+        $("#lastName").blur(function () {
+           var name =  $("#lastName"). val();
+               let result = /^[a-zA-Z ]+$/.test(name);
+               if(!result){
+                $("#lastNameError").text("Enter valid name");
+               }
+               else{
+                $("#lastNameError").text("");
+               }
+        });
+        $("#fatherName").blur(function () {
+           var name =  $("#fatherName"). val();
+               let result = /^[a-zA-Z ]+$/.test(name);
+               if(!result){
+                $("#fatherNameError").text("Enter valid name");
+               }
+               else{
+                $("#fatherNameError").text("");
+               }
+        });
+        $("#motherName").blur(function () {
+           var name =  $("#motherName"). val();
+               let result = /^[a-zA-Z ]+$/.test(name);
+               if(!result){
+                $("#motherNameError").text("Enter valid name");
+               }
+               else{
+                $("#motherNameError").text("");
+               }
+        });
+        // let languageOptions = "";
+        // const languagesCollection = ["Assamese", "Bengali", "Bodo", "Dogri", "Gujarati", "Hindi", "Kannada", "Kashmiri", "Konkani", "Maithili", "Malayalam", "Manipuri", "Marathi", "Nepali", "Oriya", "Punjabi", "Sanskrit", "Santhali", "Sindhi", "Tamil", "Telugu", "Urdu"];
+        // for (let i = 0; i < languagesCollection.length; i++) {
+        //     languageOptions += "<option value='" + languagesCollection[i] + "'>" + languagesCollection[i] + "</option>";
+        // }
+        // $('select[name="chooseLanguage1"]').append(languageOptions);
+        // $('select[name="chooseLanguage2"]').append(languageOptions);
+        // $('select[name="chooseLanguage3"]').append(languageOptions);
+
+        // $('select[name="chooseLanguage1"]').change((a) => {
+        //     let lan1Val = $(a.currentTarget).val();
+        //     let lan2Val = $('select[name="chooseLanguage2"]').val();
+        //     let lan3Val = $('select[name="chooseLanguage3"]').val();
+        //     $('select[name="chooseLanguage2"] option').each((i, e) => {
+        //         if ($(e).val() === lan1Val || $(e).val() === lan3Val || i === 0) {
+        //             $(e).prop('disabled', true);
+        //         } else {
+        //             $(e).prop('disabled', false);
+        //         }
+        //     });
+        //     $('select[name="chooseLanguage3"] option').each((i, e) => {
+        //         if ($(e).val() === lan1Val || $(e).val() === lan2Val || i === 0) {
+        //             $(e).prop('disabled', true);
+        //         } else {
+        //             $(e).prop('disabled', false);
+        //         }
+        //     });
+        // });
+
+        // $('select[name="chooseLanguage2"]').change((a) => {
+        //     let lan2Val = $(a.currentTarget).val();
+        //     let lan1Val = $('select[name="chooseLanguage1"]').val();
+        //     let lan3Val = $('select[name="chooseLanguage3"]').val();
+        //     $('select[name="chooseLanguage1"] option').each((i, e) => {
+        //         if ($(e).val() === lan2Val || $(e).val() === lan3Val || i === 0) {
+        //             $(e).prop('disabled', true);
+        //         } else {
+        //             $(e).prop('disabled', false);
+        //         }
+        //     });
+        //     $('select[name="chooseLanguage3"] option').each((i, e) => {
+        //         if ($(e).val() === lan2Val || $(e).val() === lan1Val || i === 0) {
+        //             $(e).prop('disabled', true);
+        //         } else {
+        //             $(e).prop('disabled', false);
+        //         }
+        //     });
+        // });
+
+        // $('select[name="chooseLanguage3"]').change((a) => {
+        //     let lan3Val = $(a.currentTarget).val();
+        //     let lan2Val = $('select[name="chooseLanguage2"]').val();
+        //     let lan1Val = $('select[name="chooseLanguage1"]').val();
+        //     $('select[name="chooseLanguage2"] option').each((i, e) => {
+        //         if ($(e).val() === lan1Val || $(e).val() === lan3Val || i === 0) {
+        //             $(e).prop('disabled', true);
+        //         } else {
+        //             $(e).prop('disabled', false);
+        //         }
+        //     });
+        //     $('select[name="chooseLanguage1"] option').each((i, e) => {
+        //         if ($(e).val() === lan2Val || $(e).val() === lan3Val || i === 0) {
+        //             $(e).prop('disabled', true);
+        //         } else {
+        //             $(e).prop('disabled', false);
+        //         }
+        //     });
+        // });
+
+        // const educationalQualificationList = ["Post Graduate", "Graduate", "10+", "Below 10 Standard"];
+        // let educationQualificationOptions = "";
+        // for (let i = 0; i < educationalQualificationList.length; i++) {
+        //     educationQualificationOptions += "<option value='" + educationalQualificationList[i] + "'>" + educationalQualificationList[i] + "</option>";
+        // }
+        // $('select[name="EduQualification"]').append(educationQualificationOptions);
+
+        // const interestObj = {
+        //     "Agriculture and Allied Activities": ["Horticulture", "Sericulture", "Beekeeping", "Animal Husbandry", "Bamboo Products", "Production and Processing", "Organic Farming"],
+        //     "Art and Culture": ["Painting", "Music", "Dance"],
+        //     "Handicraft and Textile and Artisans": ["Fashion", "Handicrafts", "Terakota"],
+        //     "Health and Education": ["Traditional Medicine", "Other Medical Practices", "Arts", "Technical"],
+        //     "Sports": ["Outdoor Sports", "Indoor Sports"],
+        //     "Skills Upgradation": []
+        // }
+        // $('select[name="chooseSubArea"]').prop('disabled', true);
+        // let interestsOptions = "";
+        // for (let i = 0; i < Object.keys(interestObj).length; i++) {
+        //     interestsOptions += "<option value='" + Object.keys(interestObj)[i] + "'>" + Object.keys(interestObj)[i] + "</option>";
+        // }
+        // $('select[name="AreaOfInterest"]').append(interestsOptions);
+
+        // $('select[name="AreaOfInterest"]').change((a) => {
+        //     let interestVal = $(a.currentTarget).val();
+        //     if (interestVal === "Skills Upgradation") {
+        //         $('#chooseSubAreaDiv').hide();
+        //     } else {
+        //         $('#chooseSubAreaDiv').show();
+        //         $('select[name="chooseSubArea"]').prop('selectedIndex', 0);
+        //         if (Object.keys(interestObj).indexOf(interestVal) !== -1) {
+        //             $('select[name="chooseSubArea"]').prop('disabled', false);
+        //         } else {
+        //             $('select[name="chooseSubArea"]').prop('disabled', true);
+        //         }
+
+        //         $('select[name="chooseSubArea"] option').each((i, e) => {
+        //             if (i !== 0) {
+        //                 $(e).remove();
+        //             }
+        //         });
+
+        //         let subCatInterestsOptions = "";
+        //         for (let i = 0; i < interestObj[interestVal].length; i++) {
+        //             subCatInterestsOptions += "<option value='" + interestObj[interestVal][i] + "'>" + interestObj[interestVal][i] + "</option>";
+        //         }
+
+        //         $('select[name="chooseSubArea"]').append(subCatInterestsOptions);
+        //     }
+        // });
+
+
+        // let technologyOptions = "";
+        // const technologyList = ["Basic IT knowledge", "Email and mobile operational understanding", "No access to technology"];
+        // for (let i = 0; i < technologyList.length; i++) {
+        //     technologyOptions += "<option value='" + technologyList[i] + "'>" + technologyList[i] + "</option>";
+        // }
+        // $('select[name="AccessToTech"]').append(technologyOptions);
+
+        // const awardsList = ["International/ National/ State level award by government agency", "Certificate of any state level agency", "Award/ certificate by agency of repute", "Sportsperson who has played at least at the District Level"];
+        // let awardOptions = "";
+        // for (let i = 0; i < awardsList.length; i++) {
+        //     awardOptions += "<option value='" + awardsList[i] + "'>" + awardsList[i] + "</option>";
+        // }
+        // $('select[name="awardType"]').append(awardOptions);
+
+        // const workExperienceList = ["Running an enterprise and/or with MSME Registration", "Skilled", "Employed and not skilled "];
+        // let workExperienceOptions = "";
+        // for (let i = 0; i < workExperienceList.length; i++) {
+        //     workExperienceOptions += "<option value='" + workExperienceList[i] + "'>" + workExperienceList[i] + "</option>";
+        // }
+        // $('select[name="WorkExp"]').append(workExperienceOptions);
+
+        $('select[name="WorkExp"]').change((a) => {
+            let WorkExpVal = $(a.currentTarget).val();
+            if (WorkExpVal.includes('MSME Registration')) {
+                $('#MSMERegistrationDetails').show();
+            } else {
+                $('#MSMERegistrationDetails').hide();
+            }
+        });
+
+        // const familyIncomeList = ["Upto 300,000", "Between 300,000 to 500,000", "500,000+"];
+        // let familyIncomeOptions = "";
+        // for (let i = 0; i < familyIncomeList.length; i++) {
+        //     familyIncomeOptions += "<option value='" + familyIncomeList[i] + "'>" + familyIncomeList[i] + "</option>";
+        // }
+        // $('select[name="AnnInc"]').append(familyIncomeOptions);
+
+        // const nominationByList = ["MP/ MLA", "Gol class 1 officers", "Head of TRI/ ITDPs District Level PRI Representatives", "Reputed NGOs funded by MoTA", "CoEs Corporate Organisation", "NGO & other Business Organisation"];
+        // let nominationByOptions = "";
+        // for (let i = 0; i < nominationByList.length; i++) {
+        //     nominationByOptions += "<option value='" + nominationByList[i] + "'>" + nominationByList[i] + "</option>";
+        // }
+        // $('select[name="nominationDrop2"]').append(nominationByOptions);
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            tippy('[data-tippy-content]');
+        });
+
+        tippy('#clickTooltip', {
+            trigger: 'mouseenter focus click'
+        });
+    </script>
+
+</body>
+
+</html>
