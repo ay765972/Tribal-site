@@ -103,14 +103,14 @@ $(document).ready(()=>{
     //let idList=[];
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/GetLocations",data:stateData}).then(data=>{
         //Populate the state drop down
-        console.log(data.response[0])
+    
         //const stateList = data.response.length
         var option = '';
   
         var stateLen = data.response.length
-        console.log(stateLen)
+       
         for (var i=0;i<stateLen;i++){
-          console.log(data.response[i].Name)
+          
           option = '<option value="'+ data.response[i].Name +"#"+data.response[i].Id +'">' + data.response[i].Name + '</option>';
           // option = `<option value="${data.response[i].Name}#${data.response[i].Id}">${data.response[i].Name}</option>`
           $('#chooseState').append(option);
@@ -132,15 +132,15 @@ $(document).ready(()=>{
       
       //District call
       $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/GetLocations",data:districtData}).then(data=>{
-        console.log(data.response)
+      
           //Populate the district drop down
-          console.log(data.response[0])
+      
           //const stateList = data.response.length
           var option = '';
           var stateLen = data.response.length
-          console.log(stateLen)
+         
           for (var i=0;i<stateLen;i++){
-            console.log(data.response[i].Name)
+            
             option = '<option value="'+ data.response[i].Name +"#"+data.response[i].Id +'">' + data.response[i].Name + '</option>';
             $('#chooseDistrict').append(option);
     
@@ -161,15 +161,15 @@ $(document).ready(()=>{
       
       //District call
       $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/GetLocations",data:districtData}).then(data=>{
-        console.log(data.response)
+      
           //Populate the district drop down
-          console.log(data.response[0])
+      
           //const stateList = data.response.length
           var option = '';
           var stateLen = data.response.length
-          console.log(stateLen)
+         
           for (var i=0;i<stateLen;i++){
-            console.log(data.response[i].Name)
+            
             option = '<option value="'+ data.response[i].Name +"#"+data.response[i].Id +'">' + data.response[i].Name + '</option>';
             $('#PchooseDistrict').append(option);
     
@@ -190,16 +190,16 @@ $(document).ready(()=>{
       
       //SubDistrict call
       $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/GetLocations",data:subDistrictData}).then(data=>{
-        console.log(data.response)
+      
           //Populate the sub district drop down
-          console.log(data.response[0])
+      
           //const stateList = data.response.length
           var option = '';
     
           var districtLen = data.response.length
-          console.log(districtLen)
+         
           for (var i=0;i<districtLen;i++){
-            console.log(data.response[i].Name)
+            
             option = '<option value="'+ data.response[i].Name +"#"+data.response[i].Id +'">' + data.response[i].Name + '</option>';
             $('#chooseSubDistrict').append(option);
     
@@ -220,16 +220,16 @@ $(document).ready(()=>{
       
       //SubDistrict call
       $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/GetLocations",data:subDistrictData}).then(data=>{
-        console.log(data.response)
+      
           //Populate the sub district drop down
-          console.log(data.response[0])
+      
           //const stateList = data.response.length
           var option = '';
     
           var districtLen = data.response.length
-          console.log(districtLen)
+         
           for (var i=0;i<districtLen;i++){
-            console.log(data.response[i].Name)
+            
             option = '<option value="'+ data.response[i].Name +"#"+data.response[i].Id +'">' + data.response[i].Name + '</option>';
             $('#PchooseSubDistrict').append(option);
     
@@ -251,16 +251,16 @@ $(document).ready(()=>{
         
         //Village call
         $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/GetLocations",data:VillageData}).then(data=>{
-          console.log(data.response)
+        
             //Populate the village drop down
-            console.log(data.response[0])
+        
             //const stateList = data.response.length
             var option = '';
           
             var subDistrictLen = data.response.length
-            console.log(subDistrictLen)
+          
             for (var i=0;i<subDistrictLen;i++){
-              console.log(data.response[i].Name)
+              
               option = '<option value="'+ data.response[i].Name +"#"+data.response[i].Id +'">' + data.response[i].Name + '</option>';
               $('#chooseVillage').append(option);
               
@@ -281,16 +281,16 @@ $(document).ready(()=>{
           
           //Village call
           $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/GetLocations",data:VillageData}).then(data=>{
-            console.log(data.response)
+          
               //Populate the village drop down
-              console.log(data.response[0])
+          
               //const stateList = data.response.length
               var option = '';
             
               var subDistrictLen = data.response.length
-              console.log(subDistrictLen)
+            
               for (var i=0;i<subDistrictLen;i++){
-                console.log(data.response[i].Name)
+                
                 option = '<option value="'+ data.response[i].Name +"#"+data.response[i].Id +'">' + data.response[i].Name + '</option>';
                 $('#PchooseVillage').append(option);
                 
@@ -313,7 +313,7 @@ $(document).ready(()=>{
     }
 
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:NominationTypeData}).then(data=>{
-      console.log(data.response)
+    
 
       var option = '';
 
@@ -344,7 +344,7 @@ $(document).ready(()=>{
     }
 
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:WorkExperienceData}).then(data=>{
-      console.log(data.response)
+    
 
       var option = '';
 
@@ -375,7 +375,7 @@ $(document).ready(()=>{
     }
 
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:AccessToTechData}).then(data=>{
-        console.log(data.response)
+      
 
         var option = '';
 
@@ -406,7 +406,7 @@ $(document).ready(()=>{
     }
   
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:WhichAwardData}).then(data=>{
-        console.log(data.response)
+      
   
         var option = '';
   
@@ -438,7 +438,7 @@ $(document).ready(()=>{
     }
   
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:AnnualIncomeData}).then(data=>{
-        console.log(data.response)
+      
         var option = '';
         var resLen = data.response.length
         console.log(resLen)
@@ -467,7 +467,7 @@ $(document).ready(()=>{
     }
   
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:EducationalQualificationData}).then(data=>{
-        console.log(data.response)
+      
         var option = '';
         var resLen = data.response.length
         console.log(resLen)
@@ -496,7 +496,7 @@ $(document).ready(()=>{
     }
   
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:DomicileData}).then(data=>{
-        console.log(data.response)
+      
         var option = '';
         var resLen = data.response.length
         console.log(resLen)
@@ -525,7 +525,7 @@ $(document).ready(()=>{
     }
   
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:AreaOfInterestData}).then(data=>{
-        console.log(data.response)
+      
         var option = '';
         var resLen = data.response.length
         console.log(resLen)
@@ -554,7 +554,7 @@ $(document).ready(()=>{
     }
   
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:Languages1Data}).then(data=>{
-        console.log(data.response)
+      
         var option = '';
         var resLen = data.response.length
         console.log(resLen)
@@ -583,7 +583,7 @@ $(document).ready(()=>{
     }
   
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:Languages2Data}).then(data=>{
-        console.log(data.response)
+      
         var option = '';
         var resLen = data.response.length
         console.log(resLen)
@@ -613,7 +613,7 @@ $(document).ready(()=>{
     }
 
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:Languages3Data}).then(data=>{
-      console.log(data.response)
+    
       var option = '';
       var resLen = data.response.length
       console.log(resLen)
@@ -650,7 +650,7 @@ $('select[name="nominationDrop1"]').change(function(){
     }
     
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:NominationTypeChild1Data}).then(data=>{
-      console.log(data.response)
+    
 
       var option = '';
 
@@ -689,7 +689,7 @@ $('select[name="nominationDrop1"]').change(function(){
     }
 
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:NominationTypeChild2Data}).then(data=>{
-      console.log(data.response)
+    
 
       var option = '';
 
@@ -750,7 +750,7 @@ $('select[name="AreaOfInterest"]').change(function(){
     }
     
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:AreaOfInterestChild1Data}).then(data=>{
-      console.log(data.response)
+    
 
       var option = '';
 
@@ -789,7 +789,7 @@ $('select[name="AreaOfInterest"]').change(function(){
     }
 
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:AreaOfInterestChild2Data}).then(data=>{
-      console.log(data.response)
+    
 
       var option = '';
 
@@ -828,7 +828,7 @@ $('select[name="AreaOfInterest"]').change(function(){
     }
 
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:AreaOfInterestChild3Data}).then(data=>{
-      console.log(data.response)
+    
 
       var option = '';
 
@@ -867,7 +867,7 @@ $('select[name="AreaOfInterest"]').change(function(){
     }
 
     $.ajax({method:"POST",url:"https://goal.joshtalks.org/api/app/user/GetAllCriteria",data:AreaOfInterestChild4Data}).then(data=>{
-      console.log(data.response)
+    
 
       var option = '';
 
@@ -992,7 +992,7 @@ $("#sameAddress").change(function(){
       data: UserData,
       url:'https://goal.joshtalks.org/api/app/user/CreateUser',
       success:function(data) {
-        console.log(data.response)
+      
         UserID = data.response.UserId
         console.log(UserID)
         
@@ -1018,7 +1018,7 @@ $("#sameAddress").change(function(){
       processData: false,
       url:'https://goal.joshtalks.org/api/upload/UserDocument',
       success:function(data) {
-        console.log(data.response)
+      
       }
     });
   }
@@ -1246,7 +1246,7 @@ function cleanObj(obj) {
       data: SecondUserData,
       url:'https://goal.joshtalks.org/api/app/user/UpdateUserInfo',
       success:function(data) {
-        console.log(data.response)
+      
         NewUserID = data.response.UserId
         console.log(NewUserID)
 
