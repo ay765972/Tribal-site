@@ -102,3 +102,49 @@ function fixStepIndicator(n) {
   x[n].className += " active";
   x1[n].className += " active";
 }
+
+
+$('document').ready(function(){
+  $('#firstName').on('keypress', function(e){
+    return e.metaKey || // cmd/ctrl
+        e.which <= 0 || // arrow keys
+        e.which == 8 || // delete key
+        /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+    });
+    $('#middleName').on('keypress', function(e){
+      return e.metaKey || // cmd/ctrl
+          e.which <= 0 || // arrow keys
+          e.which == 8 || // delete key
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+    });
+     $('#lastName').on('keypress', function(e){
+      return e.metaKey || // cmd/ctrl
+          e.which <= 0 || // arrow keys
+          e.which == 8 || // delete key
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+    });
+    $('#fatherName').on('keypress', function(e){
+      return e.metaKey || // cmd/ctrl
+          e.which <= 0 || // arrow keys
+          e.which == 8 || // delete key
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+    });
+    $('#motherName').on('keypress', function(e){
+      return e.metaKey || // cmd/ctrl
+          e.which <= 0 || // arrow keys
+          e.which == 8 || // delete key
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+    });
+    $('#phoneNumber').on('keypress', function(e){
+      return e.metaKey || // cmd/ctrl
+          e.which <= 0 || // arrow keys
+          e.which == 8 || // delete key
+          /[0-9]/.test(String.fromCharCode(e.which)); // numbers
+    });
+    $('#TribeName').on('keypress', function(e){
+      return e.metaKey || // cmd/ctrl
+          e.which <= 0 || // arrow keys
+          e.which == 8 || // delete key
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+    });
+});
