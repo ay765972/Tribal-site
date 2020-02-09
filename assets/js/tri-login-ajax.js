@@ -24,8 +24,14 @@ $(document).ready(() => {
         if (data.returncode == 200) {
           console.log(data.response.AuthToken);
           if (data && data.response && data.response.UserId) {
-            window.sessionStorage.setItem("loginUserId", data.response.UserId);
-            window.sessionStorage.setItem("AuthToken", data.response.AuthToken);
+            userID = escape(data.response.UserId) + ";";
+            authToken = escape(data.response.AuthToken) + ";";
+            document.cookie = "loginUserId=" + userID;
+            document.cookie = "AuthToken=" + authToken;
+            // document.write("Setting Cookies : " + "name=" + cookievalue);
+
+            // window.sessionStorage.setItem("loginUserId", data.response.UserId);
+            // window.sessionStorage.setItem("AuthToken", data.response.AuthToken);
             window.location.replace("/check");
           }
         } else {
