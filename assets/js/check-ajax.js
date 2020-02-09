@@ -1,9 +1,11 @@
 $(document).ready(() => {
-  let match =
+  let userID =
     document.cookie.match &&
     document.cookie.match(new RegExp("loginUserId" + `=([^;]+)`));
-  console.log(match[1]);
-  var currentUserId = window.sessionStorage.getItem("loginUserId");
+  let authToken =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("AuthToken" + `=([^;]+)`));
+  var currentUserId = userID && userID[1];
   if (!currentUserId) {
     alert("user not logged in");
     window.location.replace("/login");
@@ -12,9 +14,8 @@ $(document).ready(() => {
   var checkData = {
     ApiKey: "6bd20993d2c49615278863a45bce348416aa870a",
     UserId: currentUserId,
-    AuthToken: sessionStorage.getItem("AuthToken")
+    AuthToken: authToken[1]
   };
-
   var triDashData = [];
 
   $.ajax({

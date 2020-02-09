@@ -22,10 +22,9 @@ $(document).ready(() => {
       };
       $.post(apiUrl, loginData, function(data, status) {
         if (data.returncode == 200) {
-          console.log(data.response.AuthToken);
           if (data && data.response && data.response.UserId) {
             userID = escape(data.response.UserId) + ";";
-            authToken = escape(data.response.AuthToken) + ";";
+            authToken = data.response.AuthToken + ";";
             document.cookie = "loginUserId=" + userID;
             document.cookie = "AuthToken=" + authToken;
             // document.write("Setting Cookies : " + "name=" + cookievalue);
@@ -50,10 +49,12 @@ $(document).ready(() => {
 
     if ($("#CaptchaInput").val() == "") {
       why += "- Please Enter CAPTCHA Code.\n";
+      captchaText();
     }
     if ($("#CaptchaInput").val() != "") {
       if (ValidCaptcha($("#CaptchaInput").val()) == false) {
         why += "- The CAPTCHA Code Does Not Match.\n";
+        captchaText();
       }
     }
     if (why != "") {

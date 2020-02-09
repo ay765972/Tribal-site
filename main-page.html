@@ -172,7 +172,10 @@
                 $('#sidebarCollapse').on('click', function () {
                     $('#sidebar').toggleClass('active');
                 });
-                if (!window.sessionStorage.getItem('loginUserId')) {
+                let userID =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("loginUserId" + `=([^;]+)`));
+                if (!userID[1]) {
                     alert('user not logged in');
                     window.location.replace('/login');
                 }

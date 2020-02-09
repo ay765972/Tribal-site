@@ -23,8 +23,12 @@ $(document).ready(() => {
       $.post(apiUrl, loginData, function(data, status) {
         if (data.returncode == 200) {
           if (data && data.response && data.response.UserId) {
-            window.sessionStorage.setItem("loginUserId", data.response.UserId);
-            window.sessionStorage.setItem("AuthToken", data.response.AuthToken);
+            userID = escape(data.response.UserId) + ";";
+            authToken = data.response.AuthToken + ";";
+            document.cookie = "loginUserId=" + userID;
+            document.cookie = "AuthToken=" + authToken;
+            // window.sessionStorage.setItem("loginUserId", data.response.UserId);
+            // window.sessionStorage.setItem("AuthToken", data.response.AuthToken);
             window.location.replace("/check");
           }
         } else {
