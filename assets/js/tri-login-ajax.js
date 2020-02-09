@@ -27,10 +27,7 @@ $(document).ready(() => {
             authToken = data.response.AuthToken + ";";
             document.cookie = "loginUserId=" + userID;
             document.cookie = "AuthToken=" + authToken;
-            // document.write("Setting Cookies : " + "name=" + cookievalue);
-
-            // window.sessionStorage.setItem("loginUserId", data.response.UserId);
-            // window.sessionStorage.setItem("AuthToken", data.response.AuthToken);
+            document.cookie = "UserType=" + 0;
             window.location.replace("/check");
           }
         } else {

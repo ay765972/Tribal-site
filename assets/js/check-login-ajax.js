@@ -8,6 +8,9 @@ $(document).ready(() => {
   let authToken =
     document.cookie.match &&
     document.cookie.match(new RegExp("AuthToken" + `=([^;]+)`));
+  let userType =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("UserType" + `=([^;]+)`));
   var currentUserId = userID && userID[1];
   if (!currentUserId) {
     alert("user not logged in");
@@ -30,7 +33,7 @@ $(document).ready(() => {
       logoutData = {
         ApiKey: SHA1(secret2 + apiUrl.split("/")[apiUrl.split("/").length - 1]),
         UserId: currentUserId,
-        UserType: 0,
+        UserType: userType[1],
         AuthToken: authToken[1]
       };
 

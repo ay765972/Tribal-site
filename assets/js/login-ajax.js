@@ -27,8 +27,7 @@ $(document).ready(() => {
             authToken = data.response.AuthToken + ";";
             document.cookie = "loginUserId=" + userID;
             document.cookie = "AuthToken=" + authToken;
-            // window.sessionStorage.setItem("loginUserId", data.response.UserId);
-            // window.sessionStorage.setItem("AuthToken", data.response.AuthToken);
+            document.cookie = "UserType=" + 1;
             window.location.replace("/check");
           }
         } else {
@@ -47,10 +46,12 @@ $(document).ready(() => {
 
     if ($("#CaptchaInput").val() == "") {
       why += "- Please Enter CAPTCHA Code.\n";
+      captchaText();
     }
     if ($("#CaptchaInput").val() != "") {
       if (ValidCaptcha($("#CaptchaInput").val()) == false) {
         why += "- The CAPTCHA Code Does Not Match.\n";
+        captchaText();
       }
     }
     if (why != "") {
