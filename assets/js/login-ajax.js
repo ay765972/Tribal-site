@@ -62,7 +62,7 @@ $(document).ready(() => {
   }
 
   function captchaText() {
-    var no = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    var no = "1234567890ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
     var x = no[Math.floor(Math.random() * no.length)];
     for (var i = 0; i < 6; i++) {
       x = x + no[Math.floor(Math.random() * no.length)];

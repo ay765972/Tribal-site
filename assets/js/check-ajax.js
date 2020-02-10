@@ -1,3 +1,6 @@
+var secret = "Goal(lasfk!@#$%^&*()FHKBKahksaf+_)(*&^%$#fdaskfa)Goal";
+var secret2 = "Josh(fafgY/xx$<y3nXJnA,$IYgzf$H@<x_YUxL4yz89r5uxOR%+)Talks";
+
 $(document).ready(() => {
   let userID =
     document.cookie.match &&
@@ -5,28 +8,34 @@ $(document).ready(() => {
   let authToken =
     document.cookie.match &&
     document.cookie.match(new RegExp("AuthToken" + `=([^;]+)`));
+  let userType =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("UserType" + `=([^;]+)`));
   var currentUserId = userID && userID[1];
   if (!currentUserId) {
     alert("user not logged in");
     window.location.replace("/login");
   }
 
+  var apiUrl =
+    userType[1] == 0
+      ? "https://goal.joshtalks.org/api/app/user/GetQueryDashboardData"
+      : "https://goal.joshtalks.org/api/app/user/GetAdminDashboardData";
   var checkData = {
-    ApiKey: "6bd20993d2c49615278863a45bce348416aa870a",
+    ApiKey: SHA1(secret2 + apiUrl.split("/")[apiUrl.split("/").length - 1]),
     UserId: currentUserId,
     AuthToken: authToken[1]
   };
   var triDashData = [];
 
-  $.ajax({
-    method: "POST",
-    url: "https://goal.joshtalks.org/api/app/user/GetQueryDashboardData",
-    data: checkData
-  }).then(data => {
-    console.log(data);
-    if (data && data.response && data.response.length > 0) {
-      triDashData = data.response;
-      setTriDashData();
+  $.post(apiUrl, checkData, function(data, status) {
+    if (data.returncode == 200) {
+      if (data && data.response && data.response.length > 0) {
+        triDashData = data.response;
+        setTriDashData();
+      }
+    } else {
+      alert(data.msg);
     }
   });
 
