@@ -1,150 +1,166 @@
 $(document).ready(() => {
-  var currentUserId = window.sessionStorage.getItem('loginUserId');
+  let userID =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("loginUserId" + `=([^;]+)`));
+  let authToken =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("AuthToken" + `=([^;]+)`));
+  var currentUserId = userID && userID[1];
   if (!currentUserId) {
-    alert('user not logged in');
-    window.location.replace('/login');
+    alert("user not logged in");
+    window.location.replace("/login");
   }
-
 
   var adminDashboardData = {
     TotalMentee: {
-      title: 'Mentees Registered',
+      title: "Mentees Registered",
       value: 0
     },
     TotalMentor: {
-      title: 'Mentors Registered',
+      title: "Mentors Registered",
       value: 0
     },
     SelectedMentee: {
-      title: 'Number of Selected Mentees',
+      title: "Number of Selected Mentees",
       value: 0
     },
     SelectedMentor: {
-      title: 'Number of Selected Mentors',
+      title: "Number of Selected Mentors",
       value: 0
     },
     TotalTribes: {
-      title: 'Number of Tribes Applied',
+      title: "Number of Tribes Applied",
       value: 0
     },
     SelectedTribes: {
-      title: 'Number of Selected Tribes',
+      title: "Number of Selected Tribes",
       value: 0
     },
     TotalState: {
-      title: 'Number of State Application Filled',
+      title: "Number of State Application Filled",
       value: 0
     },
     SelectedState: {
-      title: 'Selected State',
+      title: "Selected State",
       value: 0
     },
     TotalMaleApplied: {
-      title: 'Male Applied',
+      title: "Male Applied",
       value: 0
     },
     SelectedMale: {
-      title: 'Selected Male',
+      title: "Selected Male",
       value: 0
     },
     TotalFemaleApplied: {
-      title: 'Female Applied',
+      title: "Female Applied",
       value: 0
     },
     SelectedFemale: {
-      title: 'Selected Female',
+      title: "Selected Female",
       value: 0
     }
-  }
+  };
 
   var adminMenteeData = "";
 
   var adminMentorData = "";
 
   var cardsColours = ["#068684", "#CE7E0D", "#A8A521", "#D9A824"];
-
+  function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i];
+      var eqPos = cookie.indexOf("=");
+      var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+  }
   function logOut() {
-    window.sessionStorage.removeItem('loginUserId');
-    currentUserId = null;
-    window.location.replace('/');
+    deleteAllCookies();
+    window.location.replace("/");
   }
 
   function setDashboardsData() {
-
     var resultsPerTable = 4;
     var cards = "";
-    Object.keys(adminDashboardData).forEach(function (d, i) {
+    Object.keys(adminDashboardData).forEach(function(d, i) {
       if (i % 4 === 0) {
-        cards += '<div class="row justify-content-center text-center">'
+        cards += '<div class="row justify-content-center text-center">';
       }
       cards += `
       <div class="col-12 col-md-3 my-1 img-center">
         <div class="card img-fluid mx-2 my-2"
-            style="width: 350px;min-width: 150px;min-height:150px;height:auto;border-radius: 3px;background-color:${cardsColours[i % 4]};">
+            style="width: 350px;min-width: 150px;min-height:150px;height:auto;border-radius: 3px;background-color:${
+              cardsColours[i % 4]
+            };">
             <div class="card-body" style="vertical-align:center">
-                <p class="card-text text-center mt-3" style="color: white;">${adminDashboardData[d].value}</p>
-                <h6 class="card-subtitle mb-3 text-center" style="color: white;">${adminDashboardData[d].title}</h6>
+                <p class="card-text text-center mt-3" style="color: white;">${
+                  adminDashboardData[d].value
+                }</p>
+                <h6 class="card-subtitle mb-3 text-center" style="color: white;">${
+                  adminDashboardData[d].title
+                }</h6>
             </div>
         </div>
       </div>`;
       if (i % 4 === 3 || i === adminDashboardData.length - 1) {
-        cards += '</div>';
+        cards += "</div>";
       }
     });
 
     $("#cards-container").append(cards);
 
     var menteeeTBody = "";
-    adminMenteeData.every(function (m, i) {
+    adminMenteeData.every(function(m, i) {
       menteeeTBody += `<tr>
         <td>${m.Name}</td>
-        <td>${m.AreaOfInterest ? m.AreaOfInterest : '-'}</td>
-        <td>${m.Score ? m.Score : '-'}</td>
+        <td>${m.AreaOfInterest ? m.AreaOfInterest : "-"}</td>
+        <td>${m.Score ? m.Score : "-"}</td>
         </tr>`;
-      if (i === resultsPerTable - 1) return false
-      else return true
+      if (i === resultsPerTable - 1) return false;
+      else return true;
     });
 
     $("#menteeTBody").append(menteeeTBody);
 
     var mentorTBody = "";
-    adminMentorData.every(function (m, i) {
+    adminMentorData.every(function(m, i) {
       mentorTBody += `<tr>
         <td>${m.Name}</td>
-        <td>${m.AreaOfInterest ? m.AreaOfInterest : '-'}</td>
-        <td>${m.LanguagePreference1 ? m.LanguagePreference1 : '-'}</td>
+        <td>${m.AreaOfInterest ? m.AreaOfInterest : "-"}</td>
+        <td>${m.LanguagePreference1 ? m.LanguagePreference1 : "-"}</td>
         </tr>`;
-      if (i === resultsPerTable - 1) return false
-      else return true
+      if (i === resultsPerTable - 1) return false;
+      else return true;
     });
 
     $("#mentorTBody").append(mentorTBody);
-
   }
 
   var adminDashData = {
     ApiKey: "46c3a6cb4d20d9d6434812ccb4cc362a32e054af",
     UserId: currentUserId,
-    AuthToken: sessionStorage.getItem("AuthToken")
-  }
+    AuthToken: authToken[1]
+  };
   $.ajax({
-    type: 'POST',
+    type: "POST",
     data: adminDashData,
-    url: 'https://goal.joshtalks.org/api/app/user/GetAdminDashboardData',
-    success: function (data) {
-      console.log(data.response)
+    url: "https://goal.joshtalks.org/api/app/user/GetAdminDashboardData",
+    success: function(data) {
+      console.log(data.response);
       if (data && data.response) {
-        if(data.response.Dashboard){
-          Object.keys(data.response.Dashboard).forEach(function (d) {
+        if (data.response.Dashboard) {
+          Object.keys(data.response.Dashboard).forEach(function(d) {
             if (adminDashboardData[d]) {
               adminDashboardData[d].value = data.response.Dashboard[d];
             }
           });
         }
-        if(data.response.Mentee){
+        if (data.response.Mentee) {
           adminMenteeData = data.response.Mentee;
         }
-        if(data.response.Mentor){
+        if (data.response.Mentor) {
           adminMentorData = data.response.Mentor;
         }
 
@@ -153,8 +169,7 @@ $(document).ready(() => {
     }
   });
 
-  $("#logoutBtn").click(function (e) {
+  $("#logoutBtn").click(function(e) {
     logOut();
-  })
-
-})
+  });
+});

@@ -1,14 +1,24 @@
 $(document).ready(() => {
-  var currentUserId = window.sessionStorage.getItem('loginUserId');
+  let userID =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("loginUserId" + `=([^;]+)`));
+  var currentUserId = userID && userID[1];
   if (!currentUserId) {
-    alert('user not logged in');
-    window.location.replace('/login');
+    alert("user not logged in");
+    window.location.replace("/login");
   }
-
+  function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i];
+      var eqPos = cookie.indexOf("=");
+      var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+  }
   function logOut() {
-    window.sessionStorage.removeItem('loginUserId');
-    currentUserId = null;
-    window.location.replace('/');
+    deleteAllCookies();
+    window.location.replace("/");
   }
 
   var totalItems = 0;
@@ -25,17 +35,19 @@ $(document).ready(() => {
 
     var tBody = "";
 
-    userList.forEach((e) => {
-      let eStatus = 'Awaiting';
-      if(e.Status === 2 ){
-        eStatus = 'Shortlisted';
-      } else if(e.Status === 1){
-        eStatus = 'Rejected';
+    userList.forEach(e => {
+      let eStatus = "Awaiting";
+      if (e.Status === 2) {
+        eStatus = "Shortlisted";
+      } else if (e.Status === 1) {
+        eStatus = "Rejected";
       }
       tBody += `<tr>
-            <td>${e.ApplicationDate ? e.ApplicationDate : '-'}</th>
-            <td><a href="mentee-form-with-id.html?id=${e.UserId}" style="color: black">${e.Name ? e.Name : '-'}</a></td>
-            <td>${e.Score ? e.Score : '-'}</td>
+            <td>${e.ApplicationDate ? e.ApplicationDate : "-"}</th>
+            <td><a href="mentee-form-with-id.html?id=${
+              e.UserId
+            }" style="color: black">${e.Name ? e.Name : "-"}</a></td>
+            <td>${e.Score ? e.Score : "-"}</td>
             <td>${eStatus}</td>
         </tr>`;
     });
@@ -56,13 +68,13 @@ $(document).ready(() => {
       UserId: currentUserId,
       UpdatedId: idArr[ptr],
       UserType: "M_100"
-    }
+    };
     $.ajax({
-      type: 'POST',
+      type: "POST",
       data: menteeDashData,
-      url: 'https://goal.joshtalks.org/api/app/user/GetUserList',
-      success: function (data) {
-        console.log(data.response)
+      url: "https://goal.joshtalks.org/api/app/user/GetUserList",
+      success: function(data) {
+        console.log(data.response);
         if (data && data.response) {
           totalItems = data.response.TotalCount;
           if (k === 0) {
@@ -83,34 +95,32 @@ $(document).ready(() => {
     });
   }
 
-  $("#prevM").click(function () {
+  $("#prevM").click(function() {
     getMenteeList(-1);
   });
 
-  $("#fwdM").click(function () {
+  $("#fwdM").click(function() {
     if (currentTotalItems !== totalItems) {
       getMenteeList(1);
     }
   });
 
   function handlePagingBtns() {
-
     if (ptr === 0) {
-      $("#prevM").prop('disabled', true);
+      $("#prevM").prop("disabled", true);
     } else {
-      $("#prevM").prop('disabled', false);
+      $("#prevM").prop("disabled", false);
     }
     if (currentTotalItems === totalItems) {
-      $("#fwdM").prop('disabled', true);
+      $("#fwdM").prop("disabled", true);
     } else {
-      $("#fwdM").prop('disabled', false);
+      $("#fwdM").prop("disabled", false);
     }
   }
 
   getMenteeList(0);
 
-  $("#logoutBtn").click(function (e) {
+  $("#logoutBtn").click(function(e) {
     logOut();
-  })
-
-})
+  });
+});

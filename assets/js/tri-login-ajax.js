@@ -20,16 +20,19 @@ $(document).ready(() => {
         LoginId: loginId,
         LoginPwd: SHA1(secret + loginPass)
       };
-      $.ajax({
-        type: "POST",
-        data: loginData,
-        url: apiUrl,
-        success: function(data) {
-          console.log(data.response);
+      $.post(apiUrl, loginData, function(data, status) {
+        if (data.returncode == 200) {
           if (data && data.response && data.response.UserId) {
-            window.sessionStorage.setItem("loginUserId", data.response.UserId);
+            userID = escape(data.response.UserId) + ";";
+            authToken = data.response.AuthToken + ";";
+            document.cookie = "loginUserId=" + userID;
+            document.cookie = "AuthToken=" + authToken;
+            document.cookie = "UserType=" + 0;
             window.location.replace("/check");
           }
+        } else {
+          captchaText();
+          alert(data.msg);
         }
       });
     }
@@ -43,10 +46,12 @@ $(document).ready(() => {
 
     if ($("#CaptchaInput").val() == "") {
       why += "- Please Enter CAPTCHA Code.\n";
+      captchaText();
     }
     if ($("#CaptchaInput").val() != "") {
       if (ValidCaptcha($("#CaptchaInput").val()) == false) {
         why += "- The CAPTCHA Code Does Not Match.\n";
+        captchaText();
       }
     }
     if (why != "") {
@@ -55,16 +60,16 @@ $(document).ready(() => {
     }
     return true;
   }
-
-  var a = Math.ceil(Math.random() * 9) + "";
-  var b = Math.ceil(Math.random() * 9) + "";
-  var c = Math.ceil(Math.random() * 9) + "";
-  var d = Math.ceil(Math.random() * 9) + "";
-  var e = Math.ceil(Math.random() * 9) + "";
-
-  var code = a + b + c + d + e;
-  document.getElementById("txtCaptcha").value = code;
-  document.getElementById("CaptchaDiv").innerHTML = code;
+  function captchaText() {
+    var no = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    var x = no[Math.floor(Math.random() * no.length)];
+    for (var i = 0; i < 6; i++) {
+      x = x + no[Math.floor(Math.random() * no.length)];
+    }
+    document.getElementById("txtCaptcha").value = x;
+    document.getElementById("CaptchaDiv").innerHTML = x;
+  }
+  window.onload = captchaText();
 
   // Validate input against the generated number
   function ValidCaptcha() {

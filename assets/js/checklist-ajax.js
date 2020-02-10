@@ -1,16 +1,21 @@
-
 $(document).ready(() => {
-  var currentUserId = window.sessionStorage.getItem('loginUserId');
+  let userID =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("loginUserId" + `=([^;]+)`));
+  let authToken =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("AuthToken" + `=([^;]+)`));
+  var currentUserId = userID && userID[1];
   if (!currentUserId) {
-    alert('user not logged in');
-    window.location.replace('/login');
+    alert("user not logged in");
+    window.location.replace("/login");
   }
 
   function GetURLParameter(sParam) {
     var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
+    var sURLVariables = sPageURL.split("&");
     for (var i = 0; i < sURLVariables.length; i++) {
-      var sParameterName = sURLVariables[i].split('=');
+      var sParameterName = sURLVariables[i].split("=");
       if (sParameterName[0] == sParam) {
         return sParameterName[1];
       }
@@ -33,7 +38,7 @@ $(document).ready(() => {
     <th scope="col" class="namW">Name</th>
     <th scope="col" class="scoW">Date</th>`;
 
-    if (GetURLParameter('type').toLowerCase() === 'solved') {
+    if (GetURLParameter("type").toLowerCase() === "solved") {
       tHead += `<th scope="col" class="scoW">Updated Date</th>`;
     }
 
@@ -46,20 +51,25 @@ $(document).ready(() => {
     var tBody = "";
 
     queryList.forEach((e, i) => {
-      if (GetURLParameter('type').toLowerCase() === 'solved') {
+      if (GetURLParameter("type").toLowerCase() === "solved") {
         tBody += `<tr>
                     <td>${i + 1}</th>
                     <td>${e.FirstName} ${e.LastName}</td>
-                    <td>${e.CreatedDate ? e.CreatedDate : '-'}</td>
-                    <td>${e.StatusUpdatedDate ? e.StatusUpdatedDate : '-'}</td>
+                    <td>${e.CreatedDate ? e.CreatedDate : "-"}</td>
+                    <td>${e.StatusUpdatedDate ? e.StatusUpdatedDate : "-"}</td>
                     </tr>`;
       } else {
         tBody += `<tr>
                                   <td>${i + 1}</th>
-                                  <td><a href="checkform.html?id=${e.QueryId}" style="color: black">${e.FirstName} ${e.LastName}</a></td>
-                                  <td>${e.CreatedDate ? e.CreatedDate : '-'}</td>
+                                  <td><a href="checkform.html?id=${
+                                    e.QueryId
+                                  }" style="color: black">${e.FirstName} ${
+          e.LastName
+        }</a></td>
+                                  <td>${
+                                    e.CreatedDate ? e.CreatedDate : "-"
+                                  }</td>
                                   </tr>`;
-
       }
     });
 
@@ -77,16 +87,16 @@ $(document).ready(() => {
     var queryDashData = {
       ApiKey: "e4af946a4be63fd6eb66eea02f2bdc3170107b7e",
       UserId: currentUserId,
-      Type: GetURLParameter('type'),
+      Type: GetURLParameter("type"),
       UpdatedId: idArr[ptr],
-      AuthToken: sessionStorage.getItem("AuthToken")
-    }
+      AuthToken: authToken[1]
+    };
     $.ajax({
-      type: 'POST',
+      type: "POST",
       data: queryDashData,
-      url: 'https://goal.joshtalks.org/api/app/user/GetAllQuery',
-      success: function (data) {
-        console.log(data.response)
+      url: "https://goal.joshtalks.org/api/app/user/GetAllQuery",
+      success: function(data) {
+        console.log(data.response);
         if (data && data.response) {
           totalItems = data.response.TotalCount;
           if (k === 0) {
@@ -107,30 +117,28 @@ $(document).ready(() => {
     });
   }
 
-  $("#prevM").click(function () {
+  $("#prevM").click(function() {
     getQueryList(-1);
   });
 
-  $("#fwdM").click(function () {
+  $("#fwdM").click(function() {
     if (currentTotalItems !== totalItems) {
       getQueryList(1);
     }
   });
 
   function handlePagingBtns() {
-
     if (ptr === 0) {
-      $("#prevM").prop('disabled', true);
+      $("#prevM").prop("disabled", true);
     } else {
-      $("#prevM").prop('disabled', false);
+      $("#prevM").prop("disabled", false);
     }
     if (currentTotalItems === totalItems) {
-      $("#fwdM").prop('disabled', true);
+      $("#fwdM").prop("disabled", true);
     } else {
-      $("#fwdM").prop('disabled', false);
+      $("#fwdM").prop("disabled", false);
     }
   }
 
   getQueryList(0);
-
-})
+});

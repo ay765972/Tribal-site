@@ -1,9 +1,14 @@
-
 $(document).ready(() => {
-  var currentUserId = window.sessionStorage.getItem('loginUserId');
+  let userID =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("loginUserId" + `=([^;]+)`));
+  let authToken =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("AuthToken" + `=([^;]+)`));
+  var currentUserId = userID && userID[1];
   if (!currentUserId) {
-    alert('user not logged in');
-    window.location.replace('/login');
+    alert("user not logged in");
+    window.location.replace("/login");
   }
 
   function setFormData(queryData) {
@@ -17,12 +22,11 @@ $(document).ready(() => {
     }
   }
 
-
   function GetURLParameter(sParam) {
     var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
+    var sURLVariables = sPageURL.split("&");
     for (var i = 0; i < sURLVariables.length; i++) {
-      var sParameterName = sURLVariables[i].split('=');
+      var sParameterName = sURLVariables[i].split("=");
       if (sParameterName[0] == sParam) {
         return sParameterName[1];
       }
@@ -32,18 +36,17 @@ $(document).ready(() => {
   var queryDashData = {
     ApiKey: "b0cc3dcf90001ba08ae42e19144bbc9c32e80337",
     UserId: currentUserId,
-    QueryId: Number(GetURLParameter('id')),
-    AuthToken: sessionStorage.getItem("AuthToken")
-  }
+    QueryId: Number(GetURLParameter("id")),
+    AuthToken: authToken[1]
+  };
   $.ajax({
-    type: 'POST',
+    type: "POST",
     data: queryDashData,
-    url: 'https://goal.joshtalks.org/api/app/user/GetQueryDetails',
-    success: function (data) {
-      console.log(data.response)
+    url: "https://goal.joshtalks.org/api/app/user/GetQueryDetails",
+    success: function(data) {
+      console.log(data.response);
       if (data && data.response) {
-        if
-          (data.response.Status === "Escalated") {
+        if (data.response.Status === "Escalated") {
           $("#escalate").remove();
         }
         setFormData(data.response);
@@ -55,29 +58,28 @@ $(document).ready(() => {
     var queryUpdateData = {
       ApiKey: "19d7e3731ad4c591674da92177fd1e9bc4aa694e",
       UserId: currentUserId,
-      QueryId: Number(GetURLParameter('id')),
+      QueryId: Number(GetURLParameter("id")),
       Status: Number(k),
-      AuthToken: sessionStorage.getItem("AuthToken")
+      AuthToken: authToken[1]
     };
     $.ajax({
-      type: 'POST',
+      type: "POST",
       data: queryUpdateData,
-      url: 'https://goal.joshtalks.org/api/app/user/UpdateQueryStatus',
-      success: function (data) {
-        console.log(data.response)
+      url: "https://goal.joshtalks.org/api/app/user/UpdateQueryStatus",
+      success: function(data) {
+        console.log(data.response);
         if (data && data.returncode === 200) {
-          window.location.replace('/check');
+          window.location.replace("/check");
         }
       }
     });
   }
 
-  $("#escalate").click(function () {
+  $("#escalate").click(function() {
     changeStatus(1);
-  })
+  });
 
-  $("#close").click(function () {
+  $("#close").click(function() {
     changeStatus(2);
-  })
-
-})
+  });
+});

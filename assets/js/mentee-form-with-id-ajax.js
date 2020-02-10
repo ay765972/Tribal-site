@@ -446,7 +446,13 @@ function setFormData(usrData) {
 }
 
 $(document).ready(() => {
-  var currentUserId = window.sessionStorage.getItem("loginUserId");
+  let userID =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("loginUserId" + `=([^;]+)`));
+  let authToken =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("AuthToken" + `=([^;]+)`));
+  var currentUserId = userID && userID[1];
   if (!currentUserId) {
     alert("user not logged in");
     window.location.replace("/login");
@@ -457,7 +463,7 @@ $(document).ready(() => {
       ApiKey: "46283ef8ca3c65c78841630081949527c87179f9",
       UserId: currentUserId,
       SelectedUserId: paramId,
-      AuthToken: sessionStorage.getItem("AuthToken")
+      AuthToken: authToken[1]
     };
     //let idList=[];
     $.ajax({
@@ -466,7 +472,7 @@ $(document).ready(() => {
       data: menteeUser
     }).then(data => {
       //Populate the state drop down
-      console.log(data.response);
+
       if (data && data.returncode === 200) {
         setFormData(data.response);
       } else {
@@ -486,7 +492,7 @@ $(document).ready(() => {
         SelectedUserId: paramId,
         IsValidate: validateVal ? true : false,
         Status: Number(statusVal),
-        AuthToken: sessionStorage.getItem("AuthToken")
+        AuthToken: authToken[1]
       };
       //let idList=[];
       $.ajax({

@@ -1,33 +1,49 @@
+var secret = "Goal(lasfk!@#$%^&*()FHKBKahksaf+_)(*&^%$#fdaskfa)Goal";
+var secret2 = "Josh(fafgY/xx$<y3nXJnA,$IYgzf$H@<x_YUxL4yz89r5uxOR%+)Talks";
 
 $(document).ready(() => {
-  var currentUserId = window.sessionStorage.getItem('loginUserId');
+  let userID =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("loginUserId" + `=([^;]+)`));
+  let authToken =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("AuthToken" + `=([^;]+)`));
+  let userType =
+    document.cookie.match &&
+    document.cookie.match(new RegExp("UserType" + `=([^;]+)`));
+  var currentUserId = userID && userID[1];
   if (!currentUserId) {
-    alert('user not logged in');
-    window.location.replace('/login');
+    alert("user not logged in");
+    window.location.replace("/login");
   }
 
+  var apiUrl =
+    userType[1] == 0
+      ? "https://goal.joshtalks.org/api/app/user/GetQueryDashboardData"
+      : "https://goal.joshtalks.org/api/app/user/GetAdminDashboardData";
   var checkData = {
-    ApiKey: "6bd20993d2c49615278863a45bce348416aa870a",
+    ApiKey: SHA1(secret2 + apiUrl.split("/")[apiUrl.split("/").length - 1]),
     UserId: currentUserId,
-    AuthToken: sessionStorage.getItem("AuthToken")
-  }
-
+    AuthToken: authToken[1]
+  };
   var triDashData = [];
 
-  $.ajax({ method: "POST", url: "https://goal.joshtalks.org/api/app/user/GetQueryDashboardData", data: checkData }).then(data => {
-    console.log(data);
-    if (data && data.response && data.response.length > 0) {
-      triDashData = data.response;
-      setTriDashData();
+  $.post(apiUrl, checkData, function(data, status) {
+    if (data.returncode == 200) {
+      if (data && data.response && data.response.length > 0) {
+        triDashData = data.response;
+        setTriDashData();
+      }
+    } else {
+      alert(data.msg);
     }
-  })
+  });
 
   function setTriDashData() {
     if (triDashData && triDashData.length > 0) {
       var triContent = "";
 
-
-      triDashData.forEach((e) => {
+      triDashData.forEach(e => {
         triContent += `<div class="col-12 col-md-3">`;
         if (e.QueryCount !== 0) {
           triContent += `<a href="checklist.html?type=${e.QueryType}">`;
@@ -35,8 +51,12 @@ $(document).ready(() => {
         triContent += `<div class="card img-fluid mx-2 my-2"
                 style="width: 350px;min-width: 150px;height:200px;min-height:150px;border-radius: 30px;text-decoration: none;">
                 <div class="card-body" style="vertical-align:center">
-                    <h4 class="card-subtitle mt-5 text-center" style="color: black">${e.Title ? e.Title : '-'}</h4>
-                    <h5 class="card-text text-center mb-3 mt-2 colored">${e.QueryCount || e.QueryCount === 0 ? e.QueryCount : '-'}</h5>
+                    <h4 class="card-subtitle mt-5 text-center" style="color: black">${
+                      e.Title ? e.Title : "-"
+                    }</h4>
+                    <h5 class="card-text text-center mb-3 mt-2 colored">${
+                      e.QueryCount || e.QueryCount === 0 ? e.QueryCount : "-"
+                    }</h5>
                 </div>
             </div>`;
         if (e.QueryCount !== 0) {
@@ -45,8 +65,7 @@ $(document).ready(() => {
         }
         triContent += `</div>`;
       });
-      $("#triContainer").append(triContent)
+      $("#triContainer").append(triContent);
     }
   }
-
-})
+});
