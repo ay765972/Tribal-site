@@ -103,48 +103,48 @@ function fixStepIndicator(n) {
   x1[n].className += " active";
 }
 
-
+//Validations
 $('document').ready(function(){
   $('#firstName').on('keypress', function(e){
-    return e.metaKey || // cmd/ctrl
-        e.which <= 0 || // arrow keys
-        e.which == 8 || // delete key
-        /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+    return e.metaKey || 
+        e.which <= 0 || 
+        e.which == 8 || 
+        /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); 
     });
     $('#middleName').on('keypress', function(e){
-      return e.metaKey || // cmd/ctrl
-          e.which <= 0 || // arrow keys
-          e.which == 8 || // delete key
-          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+      return e.metaKey || 
+          e.which <= 0 || 
+          e.which == 8 || 
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); 
     });
      $('#lastName').on('keypress', function(e){
-      return e.metaKey || // cmd/ctrl
-          e.which <= 0 || // arrow keys
-          e.which == 8 || // delete key
-          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+      return e.metaKey || 
+          e.which <= 0 || 
+          e.which == 8 || 
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); 
     });
     $('#fatherName').on('keypress', function(e){
-      return e.metaKey || // cmd/ctrl
-          e.which <= 0 || // arrow keys
-          e.which == 8 || // delete key
-          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+      return e.metaKey || 
+          e.which <= 0 || 
+          e.which == 8 || 
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); 
     });
     $('#motherName').on('keypress', function(e){
-      return e.metaKey || // cmd/ctrl
-          e.which <= 0 || // arrow keys
-          e.which == 8 || // delete key
-          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+      return e.metaKey || 
+          e.which <= 0 || 
+          e.which == 8 || 
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); 
     });
     $('#phoneNumber').on('keypress', function(e){
-      return e.metaKey || // cmd/ctrl
-          e.which <= 0 || // arrow keys
-          e.which == 8 || // delete key
-          /[0-9]/.test(String.fromCharCode(e.which)); // numbers
+      return e.metaKey || 
+          e.which <= 0 || 
+          e.which == 8 || 
+          /[0-9]/.test(String.fromCharCode(e.which)); 
     });
     $('#TribeName').on('keypress', function(e){
-      return e.metaKey || // cmd/ctrl
-          e.which <= 0 || // arrow keys
-          e.which == 8 || // delete key
-          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); // numbers
+      return e.metaKey || 
+          e.which <= 0 || 
+          e.which == 8 || 
+          /^[a-zA-Z ]/.test(String.fromCharCode(e.which)); 
     });
 });
